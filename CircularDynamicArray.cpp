@@ -7,16 +7,23 @@
 CircularDynamicArray::CircularDynamicArray() {
     // Default Constructor.
     // The array should be of capacity 2 and size 0
+    capacitySize = 2;
+    size = 0;
+    a = new int[capacitySize]
 
 }
 
 CircularDynamicArray::CircularDynamicArray(int s) {
     // For this constructor the array should be of capacity and size s
+    capacitySize = s;
+    size = s;
+    a = new int[capacitySize]
 
 }
 
 CircularDynamicArray::~CircularDynamicArray() {
     // destructor for the class
+    delete[] a;
 
 }
 
@@ -41,22 +48,37 @@ void CircularDynamicArray::addFront(elmtype v) {
 void CircularDynamicArray::delEnd() {
     // reduces the size of the array by 1 at the end.
     // Should shrink the capacity when only 25% of the array is in use after the delete.
+    size--;
+    if (capacitySize >= (size / 4))
+    {
+        size /= 2;
+        //FIXME: make a new array and insert old values into new array
+    }
 
 }
 
 void CircularDynamicArray::delFront() {
     // reduces the size of the array by 1 at the beginning of the array.
     // Should shrink the capacity when only 25% of the array is in use after the delete.
+    size--;
+    if (capacitySize >= (size / 4))
+    {
+        size /= 2;
+
+        // FIXME: make new array and insert old values into that
+    }
 
 }
 
 int CircularDynamicArray::length() {
     // returns the size of the array
+    return size;
 
 }
 
 int CircularDynamicArray::capacity() {
     // returns the capacity of the array
+    return capacitySize;
 
 }
 void CircularDynamicArray::clear() {

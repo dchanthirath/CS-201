@@ -29,6 +29,8 @@ public:
     int binSearch(elmtype e);
 
 private:
+    int size, capacitySize;
+    int *a;
 
 };
 
