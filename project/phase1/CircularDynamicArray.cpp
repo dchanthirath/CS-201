@@ -9,7 +9,7 @@ CircularDynamicArray::CircularDynamicArray() {
     // The array should be of capacity 2 and size 0
     capacitySize = 2;
     size = 0;
-    a = new int[capacitySize]
+    a = new int[capacitySize];
 
 }
 
@@ -17,7 +17,7 @@ CircularDynamicArray::CircularDynamicArray(int s) {
     // For this constructor the array should be of capacity and size s
     capacitySize = s;
     size = s;
-    a = new int[capacitySize]
+    a = new int[capacitySize];
 
 }
 
