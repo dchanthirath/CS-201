@@ -25,8 +25,7 @@ public:
     int binSearch(elmtype e);
 
 private:
-    int size, capacitySize;
-    // int front, back;
+    int size, capacitySize, front, back;
     int *array;
 
 };
@@ -36,7 +35,7 @@ CircularDynamicArray<elmtype>::CircularDynamicArray() {
     // Default Constructor.
     // The array should be of capacity 2 and size 0
     array = new elmtype[capacitySize = 2];
-    size = 0;
+    size = front = back = 0;
 
 }
 
@@ -45,6 +44,7 @@ CircularDynamicArray<elmtype>::CircularDynamicArray(int s) {
     // For this constructor the array should be of capacity and size s
     array = new elmtype[capacitySize = s];
     size = s;
+    front = back = 0;
 
 }
 
@@ -60,7 +60,7 @@ elmtype& CircularDynamicArray<elmtype>::operator[](int i) {
     // Traditional [] operator.
     // Should print a message if i is out of bounds and
     // return a reference to value of type elmtype stored in the class for this purpose
-
+    // TODO: implement this function tomorrow :)
 }
 
 template <typename elmtype>
@@ -69,7 +69,7 @@ void CircularDynamicArray<elmtype>::addEnd(elmtype v) {
     // Should double the capacity when the new element doesn't fit.
     if (size == capacitySize) capacitySize *= 2;
     size++;
-    // TODO: implement the addEnd function
+    // TODO: implement the end part of this function
 
 }
 
@@ -81,7 +81,7 @@ void CircularDynamicArray<elmtype>::addFront(elmtype v) {
     if (size == capacitySize) capacitySize *= 2;
     size++;
 
-    // TODO:: implement the addfront functionS
+    // TODO:: implement the front part of this function
 }
 
 template <typename elmtype>
@@ -91,7 +91,6 @@ void CircularDynamicArray<elmtype>::delEnd() {
     if (size <= (capacitySize / 4)) capacitySize /= 2;
     size--;
 
-    // TODO: make a new array and insert old values into new array
 }
 
 template <typename elmtype>
@@ -101,7 +100,6 @@ void CircularDynamicArray<elmtype>::delFront() {
     if (size <= (capacitySize / 4)) capacitySize /= 2;
     size--;
 
-    // TODO: actually implement this lmao
 }
 
 template <typename elmtype>
@@ -145,7 +143,9 @@ template <typename elmtype>
 int CircularDynamicArray<elmtype>::linearSearch(elmtype e) {
     // Performs a linear search of the array looking for the item e.
     // Returns the index of the item if found or -1 otherwise.
+    for (int i = 0; i < size; i++) if (array[i] == e) return e;
 
+    return -1;
 }
 
 template <typename elmtype>
@@ -153,5 +153,14 @@ int CircularDynamicArray<elmtype>::binSearch(elmtype e) {
     // Performs a binary search of the array looking for the item e.
     // Returns the index of the item if found or -1 otherwise.
     // This method assumes that the array is in increasing order, but there is no guarantee that the sort method has been called.
+    int low = 0;
+    int high = size;
+    int mid = (high + low) / 2;
+    // TODO: finish implementing this function
+    if (array[mid] < e)
+    {
+        return CircularDynamicArray
+    }
 
+    return -1;
 }

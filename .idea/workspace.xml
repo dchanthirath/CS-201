@@ -22,6 +22,8 @@
   <component name="ChangeListManager">
     <list default="true" id="80ff20b4-dc4b-4162-99b8-309b94c3ef3a" name="Changes" comment="updated cmake folder, lab files, project files, and started report">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/phase1/CircularDynamicArray.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase1/CircularDynamicArray.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,6 +127,8 @@
       <workItem from="1706896576214" duration="94000" />
       <workItem from="1706901813650" duration="660000" />
       <workItem from="1706987146399" duration="1999000" />
+      <workItem from="1707009668351" duration="4426000" />
+      <workItem from="1707141753514" duration="1604000" />
     </task>
     <task id="LOCAL-00001" summary="finally added lab3 and replaced the make file with cmakelists">
       <option name="closed" value="true" />
