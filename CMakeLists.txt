@@ -9,4 +9,5 @@ add_executable(CS_201 main.cpp
         labs/lab3/queueu.cpp
         project/phase1/Phase1Main_S24.cpp
         project/phase1/CircularDynamicArray.cpp
+        project/phase1/main.cpp
 )

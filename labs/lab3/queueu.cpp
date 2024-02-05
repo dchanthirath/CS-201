@@ -65,7 +65,7 @@ T Queue<T>::dequeue()
     // lab solution
     // const int spot = front;
     const T spot = front;
-    front = (front + 1) % capacity;
+    front = (front + 1) % capacity; // moves the front pointer to the next item
     size--;
 
     return a[spot];

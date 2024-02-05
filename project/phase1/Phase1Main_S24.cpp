@@ -7,7 +7,7 @@ void foo(CircularDynamicArray<int> x) {
 	for (int i=0; i<x.length()/2; i++)
 		x[i] = x[x.length()/2+i];
 	// x => "6 7 8 9 10 15 19 6 7 8 9 10 15 19 11"
-	for (int i=0; i< X.length();i++) cout << X[i] << " ";  cout << endl;
+	for (int i=0; i< x.length();i++) cout << x[i] << " ";  cout << endl;
 }
 
 int main(){
