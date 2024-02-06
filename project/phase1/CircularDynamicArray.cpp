@@ -74,7 +74,7 @@ void CircularDynamicArray<elmtype>::addEnd(elmtype v) {
     // Should double the capacity when the new element doesn't fit.
     // TODO: implement wrap around array
     if (size == capacitySize) capacitySize *= 2;
-
+    back = (back - 1 + size) % capacitySize;
     array[size] = v;
     size++;
 
@@ -87,7 +87,7 @@ void CircularDynamicArray<elmtype>::addFront(elmtype v) {
     // The new element should be the item returned at index 0.
     // TODO: implement this actual part >:3
     if (size == capacitySize) capacitySize *= 2;
-
+    front = (front - 1) % capacitySize;
     size++;
 
 }

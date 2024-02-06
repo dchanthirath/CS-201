@@ -20,17 +20,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80ff20b4-dc4b-4162-99b8-309b94c3ef3a" name="Changes" comment="updated CDA functions and clion auto added files">
-      <change afterPath="$PROJECT_DIR$/project/phase1/main.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/phase1/makefile" afterDir="false" />
+    <list default="true" id="80ff20b4-dc4b-4162-99b8-309b94c3ef3a" name="Changes" comment="clion made these">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/hello.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/labs/lab3/queueu.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/labs/lab3/queueu.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/phase1/CircularDynamicArray.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase1/CircularDynamicArray.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/phase1/Phase1Main_S24.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase1/Phase1Main_S24.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +132,7 @@
       <workItem from="1706901813650" duration="660000" />
       <workItem from="1706987146399" duration="1999000" />
       <workItem from="1707009668351" duration="4426000" />
-      <workItem from="1707141753514" duration="8130000" />
+      <workItem from="1707141753514" duration="10083000" />
     </task>
     <task id="LOCAL-00001" summary="finally added lab3 and replaced the make file with cmakelists">
       <option name="closed" value="true" />
@@ -174,7 +166,23 @@
       <option name="project" value="LOCAL" />
       <updated>1707143490592</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="updated more CDA functions and created a makefile to export">
+      <option name="closed" value="true" />
+      <created>1707159101434</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1707159101434</updated>
+    </task>
+    <task id="LOCAL-00006" summary="clion made these">
+      <option name="closed" value="true" />
+      <created>1707159138870</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1707159138870</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,7 +198,9 @@
     <MESSAGE value="finally added lab3 and replaced the make file with cmakelists" />
     <MESSAGE value="updated cmake folder, lab files, project files, and started report" />
     <MESSAGE value="updated CDA functions and clion auto added files" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated CDA functions and clion auto added files" />
+    <MESSAGE value="updated more CDA functions and created a makefile to export" />
+    <MESSAGE value="clion made these" />
+    <option name="LAST_COMMIT_MESSAGE" value="clion made these" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
