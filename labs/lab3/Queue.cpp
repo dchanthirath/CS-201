@@ -1,10 +1,31 @@
 //
 // Created by Donald on 1/31/2024.
 //
-
-#include "Queue.h"
-
 #include <iostream>
+
+template <typename T>
+class Queue {
+public:
+    Queue();
+    Queue(int s);
+
+    // void enqueue(int x);
+    void enqueue(const T& x);
+    // int dequeue();
+    T dequeue();
+
+    ~Queue();
+    Queue(const Queue &old);
+    Queue& operator=(const Queue& rhs);
+
+private:
+    int size, capacity, front;
+    // int *a;
+    T *a;
+};
+
+// had to move everything from the .cpp file
+// because i had to instantiate templates :)
 
 template <typename T>
 Queue<T>::Queue()
@@ -113,6 +134,3 @@ Queue<T>& Queue<T>::operator=(const Queue<T>& rhs)
     return *this;
 }
 
-// instantiating templates
-template class Queue<int>;
-template class Queue<double>;

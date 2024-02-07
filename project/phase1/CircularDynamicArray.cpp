@@ -75,9 +75,9 @@ void CircularDynamicArray<elmtype>::addEnd(elmtype v) {
     if (size == capacitySize)
     {
         capacitySize *= 2;
-
         elmtype* temp = new elmtype[capacitySize];
-        for (int i = 0; i < size; i++) temp[i] = array[i];
+        for (int i = 0; i < size; i++)
+            temp[i] = array[i];
 
         delete[] array;
         array = temp;
@@ -97,16 +97,17 @@ void CircularDynamicArray<elmtype>::addFront(elmtype v)
     if (size == capacitySize)
     {
         capacitySize *= 2;
-
         elmtype* temp = new elmtype[capacitySize];
-        for (int i = 0; i < size; i++) temp[(i + 1) % capacitySize] = array[i];
+        for (int i = 0; i < size; i++)
+            temp[(i + 1) % capacitySize] = array[i];
 
         delete[] array;
         array = temp;
     }
     else // if there is already room
     {
-        for (int i = size - 1; i >= 0; i--) array[(i + 1) % capacitySize] = array[i];
+        for (int i = size - 1; i >= 0; i--)
+            array[(i + 1) % capacitySize] = array[i];
     }
     // this wraps around
     front = (front - 1 + capacitySize) % capacitySize;
