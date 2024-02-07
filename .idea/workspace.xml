@@ -20,8 +20,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80ff20b4-dc4b-4162-99b8-309b94c3ef3a" name="Changes" comment="implemented addend and still working on addfront">
+    <list default="true" id="80ff20b4-dc4b-4162-99b8-309b94c3ef3a" name="Changes" comment="adjusted addfront to decrement instead of increment">
       <change beforePath="$PROJECT_DIR$/project/phase1/CircularDynamicArray.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase1/CircularDynamicArray.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/phase1/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase1/a.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/phase1/a.exe.stackdump" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase1/a.exe.stackdump" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +132,7 @@
       <workItem from="1707141753514" duration="10121000" />
       <workItem from="1707241387337" duration="2183000" />
       <workItem from="1707254323825" duration="23000" />
-      <workItem from="1707254358754" duration="6436000" />
+      <workItem from="1707254358754" duration="6493000" />
     </task>
     <task id="LOCAL-00001" summary="finally added lab3 and replaced the make file with cmakelists">
       <option name="closed" value="true" />
@@ -196,7 +198,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707294415078</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="adjusted addfront to decrement instead of increment">
+      <option name="closed" value="true" />
+      <created>1707294513646</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1707294513646</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,7 +225,8 @@
     <MESSAGE value="updated more CDA functions and created a makefile to export" />
     <MESSAGE value="clion made these" />
     <MESSAGE value="implemented addend and still working on addfront" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented addend and still working on addfront" />
+    <MESSAGE value="adjusted addfront to decrement instead of increment" />
+    <option name="LAST_COMMIT_MESSAGE" value="adjusted addfront to decrement instead of increment" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
