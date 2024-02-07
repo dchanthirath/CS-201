@@ -181,6 +181,9 @@ elmtype CircularDynamicArray<elmtype>::QSelection(int k) {
     // returns the kth smallest element in the array using the quickselect algorithm.
     // This method should choose a pivot element at random.
 
+    // recurse on only one side
+    // for random pivot
+    // kinda like binary search but we're just recursing through the left or right side of array
 }
 
 template <typename elmtype>

@@ -124,15 +124,24 @@
       <recent name="C:\Users\Donald\CLionProjects\CS-201" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="CMake Debug.CS_201">
     <configuration name="CS_201" type="CMakeListConfigurationType" factoryName="CMakeListConfigurationFactory" temporary="true">
       <method v="2" />
+    </configuration>
+    <configuration name="CS_201" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CS_201" TARGET_NAME="CS_201" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CS_201" RUN_TARGET_NAME="CS_201">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="CMake Application.CS_201" />
+      <item itemvalue="CMake Debug.CS_201" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="CMake Debug.CS_201" />
