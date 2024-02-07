@@ -1,9 +1,8 @@
 # ninja log v5
-61	668	1707296204822508800	CMakeFiles/CS_201.dir/project/phase1/main.cpp.o	b9b49c6faf2e4c84
-47	633	1707296204782911900	CMakeFiles/CS_201.dir/project/phase1/CircularDynamicArray.cpp.o	48d22cc6708f3c8a
-58	1211	1707243554838073800	CMakeFiles/CS_201.dir/labs/lab3/queueu.cpp.o	f99c6f2b8803850e
-37	1308	1707143338387369400	CMakeFiles/CS_201.dir/labs/lab3/main.cpp.o	817362ceab81c127
+25	560	1707296782299009000	CMakeFiles/CS_201.dir/labs/lab3/Queue.cpp.o	a0e41f20bbd8ca58
+3	132	1707314943833369100	build.ninja	82f9d4c05d9c3d03
 12	1306	1707143338387369400	CMakeFiles/CS_201.dir/main.cpp.o	334a09d1a67623a3
-2	165	1707296432644172500	build.ninja	82f9d4c05d9c3d03
 9	624	1707296433294320500	CMakeFiles/CS_201.dir/labs/lab3/main.cpp.o	817362ceab81c127
+58	1211	1707243554838073800	CMakeFiles/CS_201.dir/labs/lab3/queueu.cpp.o	f99c6f2b8803850e
+47	633	1707296204782911900	CMakeFiles/CS_201.dir/project/phase1/CircularDynamicArray.cpp.o	48d22cc6708f3c8a
 36	629	1707296433309806200	CMakeFiles/CS_201.dir/project/phase1/main.cpp.o	b9b49c6faf2e4c84

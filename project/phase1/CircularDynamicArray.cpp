@@ -30,7 +30,6 @@ public:
 private:
     int size, capacitySize, front, back;
     int *array;
-
 };
 
 template <typename elmtype>
@@ -39,7 +38,6 @@ CircularDynamicArray<elmtype>::CircularDynamicArray() {
     // The array should be of capacity 2 and size 0
     array = new elmtype[capacitySize = 2];
     size = front = back = 0;
-
 }
 
 template <typename elmtype>
@@ -48,14 +46,12 @@ CircularDynamicArray<elmtype>::CircularDynamicArray(int s) {
     array = new elmtype[capacitySize = s];
     size = s;
     front = back = 0;
-
 }
 
 template <typename elmtype>
 CircularDynamicArray<elmtype>::~CircularDynamicArray() {
     // destructor for the class
     delete[] array;
-
 }
 
 template <typename elmtype>
@@ -85,7 +81,6 @@ void CircularDynamicArray<elmtype>::addEnd(elmtype v) {
 
     array[size] = v;
     size++;
-
 }
 
 template <typename elmtype>
@@ -113,30 +108,48 @@ void CircularDynamicArray<elmtype>::addFront(elmtype v)
     front = (front - 1 + capacitySize) % capacitySize;
     array[front] = v;
     size++;
-
 }
 
 template <typename elmtype>
 void CircularDynamicArray<elmtype>::delEnd() {
     // reduces the size of the array by 1 at the end.
     // Should shrink the capacity when only 25% of the array is in use after the delete.
-    // TODO: implement this actual part >:3
-    if (size <= (capacitySize / 4)) capacitySize /= 2;
+    if (size == (capacitySize / 4))
+    {
+        capacitySize /= 2;
+        elmtype* temp = new elmtype[capacitySize];
+        for (int i = 0; i < size; i++)
+            temp[i] = array[i];
+
+        delete[] array;
+        array = temp;
+    }
 
     size--;
-
 }
 
 template <typename elmtype>
 void CircularDynamicArray<elmtype>::delFront() {
     // reduces the size of the array by 1 at the beginning of the array.
     // Should shrink the capacity when only 25% of the array is in use after the delete.
-    // TODO: implement this actual part >:3
-    if (size <= (capacitySize / 4)) capacitySize /= 2;
+    if (size == (capacitySize / 4))
+    {
+        capacitySize /= 2;
+        elmtype* temp = new elmtype[capacitySize];
+        for (int i = 0; i < size; i++)
+            temp[(i + 1) % capacitySize] = array[i];
+
+        delete[] array;
+        array = temp;
+    }
+    else // if there is already room
+    {
+        for (int i = size - 1; i >= 0; i--)
+            array[(i + 1) % capacitySize] = array[i];
+    }
 
     front = (front + 1) % capacitySize;
     size--;
-
 }
 
 template <typename elmtype>
@@ -152,7 +165,6 @@ int CircularDynamicArray<elmtype>::capacity() const
 {
     // returns the capacity of the array
     return capacitySize;
-
 }
 
 template <typename elmtype>
