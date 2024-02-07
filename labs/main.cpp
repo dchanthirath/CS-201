@@ -42,6 +42,8 @@ int main()
     intNums1.enqueue(4);
     intNums1.enqueue(8);
     intNums1.enqueue(12);
+    intNums1.enqueue(16);
+    intNums1.enqueue(20);
 
     cout << "Item dequeued: " << intNums1.dequeue() << endl;
 
@@ -50,10 +52,9 @@ int main()
     cout << "Item dequeued: " << intNums1.dequeue() << endl;
     cout << "Item dequeued: " << intNums2.dequeue() << endl;
 
-    intNums2 = intNums1;
-
-    cout << "Item dequeued: " << intNums1.dequeue() << endl;
-    cout << "Item dequeued: " << intNums2.dequeue() << endl;
+    cout << "intNums1: ";
+    for (int i = 0; i < 3; i++) cout << intNums1[i] << " ";
+    cout << endl;
 
     Queue<double> dbNumb;
 

@@ -20,11 +20,19 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80ff20b4-dc4b-4162-99b8-309b94c3ef3a" name="Changes" comment="unversioned file from clion">
+    <list default="true" id="80ff20b4-dc4b-4162-99b8-309b94c3ef3a" name="Changes" comment="fixed addFront and delEnd">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-cd4d1ea30d1dff7cc583.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2024-02-07T14-09-03-0925.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-CS_201-Debug-240b33ea259583904058.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/labs/Queue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/labs/Queue.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/labs/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/labs/a.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/labs/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/labs/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/phase1/CircularDynamicArray.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase1/CircularDynamicArray.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/phase1/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase1/a.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/phase1/a.exe.stackdump" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase1/a.exe.stackdump" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/phase1/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase1/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -113,6 +121,11 @@
     </key>
   </component>
   <component name="RunManager" selected="CMake Debug.CS_201">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CS_201" type="CMakeListConfigurationType" factoryName="CMakeListConfigurationFactory" temporary="true">
       <method v="2" />
     </configuration>
@@ -156,7 +169,7 @@
       <workItem from="1707254323825" duration="23000" />
       <workItem from="1707254358754" duration="9521000" />
       <workItem from="1707314570848" duration="1030000" />
-      <workItem from="1707316661469" duration="4883000" />
+      <workItem from="1707316661469" duration="14631000" />
     </task>
     <task id="LOCAL-00001" summary="finally added lab3 and replaced the make file with cmakelists">
       <option name="closed" value="true" />
@@ -278,7 +291,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707315606111</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="fixed addFront and delEnd">
+      <option name="closed" value="true" />
+      <created>1707325203870</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1707325203870</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,7 +325,8 @@
     <MESSAGE value="unversioned files from clion cmake" />
     <MESSAGE value="added more description for QSelect" />
     <MESSAGE value="unversioned file from clion" />
-    <option name="LAST_COMMIT_MESSAGE" value="unversioned file from clion" />
+    <MESSAGE value="fixed addFront and delEnd" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed addFront and delEnd" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
