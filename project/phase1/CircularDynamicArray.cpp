@@ -44,8 +44,7 @@ template <typename elmtype>
 CircularDynamicArray<elmtype>::CircularDynamicArray(int s) {
     // For this constructor the array should be of capacity and size s
     array = new elmtype[capacitySize = s];
-    size = s;
-    front = back = 0;
+    size = front = back = 0;
 }
 
 template <typename elmtype>
@@ -105,7 +104,7 @@ void CircularDynamicArray<elmtype>::addFront(elmtype v)
             array[(i + 1) % capacitySize] = array[i];
     }
     // this wraps around
-    front = (front - 1 + capacitySize) % capacitySize;
+    front = (front + capacitySize) % capacitySize;
     array[front] = v;
     size++;
 }
@@ -114,6 +113,8 @@ template <typename elmtype>
 void CircularDynamicArray<elmtype>::delEnd() {
     // reduces the size of the array by 1 at the end.
     // Should shrink the capacity when only 25% of the array is in use after the delete.
+    size--;
+
     if (size == (capacitySize / 4))
     {
         capacitySize /= 2;
@@ -124,14 +125,14 @@ void CircularDynamicArray<elmtype>::delEnd() {
         delete[] array;
         array = temp;
     }
-
-    size--;
 }
 
 template <typename elmtype>
 void CircularDynamicArray<elmtype>::delFront() {
     // reduces the size of the array by 1 at the beginning of the array.
     // Should shrink the capacity when only 25% of the array is in use after the delete.
+    size--;
+
     if (size == (capacitySize / 4))
     {
         capacitySize /= 2;
@@ -142,14 +143,13 @@ void CircularDynamicArray<elmtype>::delFront() {
         delete[] array;
         array = temp;
     }
-    else // if there is already room
+    else
     {
         for (int i = size - 1; i >= 0; i--)
             array[(i + 1) % capacitySize] = array[i];
     }
 
     front = (front + 1) % capacitySize;
-    size--;
 }
 
 template <typename elmtype>

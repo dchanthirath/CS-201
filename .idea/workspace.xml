@@ -10,7 +10,9 @@
     <option name="reloaded" value="true" />
   </component>
   <component name="CMakeRunConfigurationManager">
-    <generated />
+    <generated>
+      <config projectName="CS_201" targetName="CS_201" />
+    </generated>
   </component>
   <component name="CMakeSettings">
     <configurations>
@@ -18,25 +20,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80ff20b4-dc4b-4162-99b8-309b94c3ef3a" name="Changes" comment="deleted header file in lab3">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="80ff20b4-dc4b-4162-99b8-309b94c3ef3a" name="Changes" comment="unversioned file from clion">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-a39bda16d7b590613351.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2024-02-05T15-43-12-0409.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-CS_201-Debug-180fcc08905f2fe45dce.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CS_201.dir/labs/lab3/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CS_201.dir/labs/lab3/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/labs/lab3/Queue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/labs/Queue.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/labs/lab3/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/labs/a.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/labs/lab3/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/labs/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/labs/lab3/queueu.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/labs/queueu.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/phase1/CircularDynamicArray.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase1/CircularDynamicArray.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/phase1/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase1/a.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/phase1/a.exe.stackdump" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase1/a.exe.stackdump" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/phase1/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase1/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -133,11 +121,6 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="CMake Application.CS_201" />
       <item itemvalue="CMake Debug.CS_201" />
@@ -172,7 +155,8 @@
       <workItem from="1707241387337" duration="2183000" />
       <workItem from="1707254323825" duration="23000" />
       <workItem from="1707254358754" duration="9521000" />
-      <workItem from="1707314570848" duration="370000" />
+      <workItem from="1707314570848" duration="1030000" />
+      <workItem from="1707316661469" duration="4883000" />
     </task>
     <task id="LOCAL-00001" summary="finally added lab3 and replaced the make file with cmakelists">
       <option name="closed" value="true" />
@@ -262,7 +246,39 @@
       <option name="project" value="LOCAL" />
       <updated>1707296545559</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="added functionality for the delfront and delend functions">
+      <option name="closed" value="true" />
+      <created>1707315040795</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1707315040795</updated>
+    </task>
+    <task id="LOCAL-00013" summary="unversioned files from clion cmake">
+      <option name="closed" value="true" />
+      <created>1707315065479</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1707315065479</updated>
+    </task>
+    <task id="LOCAL-00014" summary="added more description for QSelect">
+      <option name="closed" value="true" />
+      <created>1707315593358</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1707315593358</updated>
+    </task>
+    <task id="LOCAL-00015" summary="unversioned file from clion">
+      <option name="closed" value="true" />
+      <created>1707315606111</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1707315606111</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,7 +300,11 @@
     <MESSAGE value="adjusted addfront to decrement instead of increment" />
     <MESSAGE value="swapped the inside of the for statements" />
     <MESSAGE value="deleted header file in lab3" />
-    <option name="LAST_COMMIT_MESSAGE" value="deleted header file in lab3" />
+    <MESSAGE value="added functionality for the delfront and delend functions" />
+    <MESSAGE value="unversioned files from clion cmake" />
+    <MESSAGE value="added more description for QSelect" />
+    <MESSAGE value="unversioned file from clion" />
+    <option name="LAST_COMMIT_MESSAGE" value="unversioned file from clion" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
