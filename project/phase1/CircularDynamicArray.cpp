@@ -106,7 +106,7 @@ void CircularDynamicArray<elmtype>::addFront(elmtype v)
     }
     else // if there is already room
     {
-        for (int i = 0; i < size; i++) array[(i + 1) % capacitySize] = array[i];
+        for (int i = 0; i < size; i--) array[(i + 1) % capacitySize] = array[i];
     }
     // this wraps around
     front = (front - 1 + capacitySize) % capacitySize;
