@@ -67,20 +67,25 @@ template <typename elmtype>
 void CircularDynamicArray<elmtype>::addEnd(elmtype v) {
     // increases the size of the array by 1 and stores v at the end of the array.
     // Should double the capacity when the new element doesn't fit.
+
+    // adding 'v' to the end of the array
     array[size] = v;
     size++;
 
+    // if full
     if (size == capacitySize)
     {
+        // allocate new memory and copying elements
         elmtype* temp = new elmtype[capacitySize * 2];
-        for (int i = 0; i < size; i++)
+        for (int i = 0; i < size; i++) // assigning elements from beginning of temp
             temp[i] = array[(front + i) % capacitySize];
-
+        // deallocating old array
         delete[] array;
+        // allocating new memeory
+        array = temp;
 
         capacitySize *= 2;
         front = 0;
-        array = temp;
     }
 }
 
@@ -90,26 +95,23 @@ void CircularDynamicArray<elmtype>::addFront(elmtype v)
     // increases the size of the array by 1 and stores v at the beginning of the array.
     // Should double the capacity when the new element doesn't fit.
     // The new element should be the item returned at index 0.
-    front = (front + capacitySize) % capacitySize;
+    front = (front + capacitySize - 1) % capacitySize;
     array[front] = v;
     size++;
 
     if (size == capacitySize)
     {
+        // allocating new memory and copying elements
         elmtype* temp = new elmtype[capacitySize * 2];
         for (int i = 0; i < size; i++)
             temp[i] = array[(front + i) % capacitySize];
-
+        // deallocating memory
         delete[] array;
+        // reallocating memory
+        array = temp;
 
         capacitySize *= 2;
         front = 0;
-        array = temp;
-    }
-    else // if there is already room
-    {
-        for (int i = size - 1; i >= 0; i--)
-            array[(i + 1) % capacitySize] = array[i];
     }
 }
 
@@ -121,13 +123,15 @@ void CircularDynamicArray<elmtype>::delEnd() {
 
     if (size == (capacitySize / 4))
     {
+        // allocating new memory and copying elements
         elmtype* temp = new elmtype[capacitySize / 2];
         for (int i = 0; i < size; i++)
             temp[i] = array[(front + i) % capacitySize];
-
+        // deallocating memory
         delete[] array;
-
+        // reallocating memory
         array = temp;
+
         capacitySize /= 2;
         front = 0;
     }
@@ -143,13 +147,15 @@ void CircularDynamicArray<elmtype>::delFront() {
 
     if (size == (capacitySize / 4))
     {
+        // allocating new memory and copying elements
         elmtype* temp = new elmtype[capacitySize / 2];
         for (int i = 0; i < size; i++)
             temp[i] = array[(front + i) % capacitySize];
-
+        // deallocating memory
         delete[] array;
-
+        // reallocating memory
         array = temp;
+
         capacitySize /= 2;
     }
 }
@@ -159,7 +165,6 @@ int CircularDynamicArray<elmtype>::length() const
 {
     // returns the size of the array
     return size;
-
 }
 
 template <typename elmtype>
