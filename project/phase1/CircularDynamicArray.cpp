@@ -63,31 +63,54 @@ elmtype& CircularDynamicArray<elmtype>::operator[](int i) {
     // Traditional [] operator.
     // Should print a message if i is out of bounds and
     // return a reference to value of type elmtype stored in the class for this purpose
-    if (i > 0 && i <= size) return array[i];
+    if (i < 0 || i >= size) throw std::out_of_range("i is out of bounds");
 
-    throw std::invalid_argument("i is out of bounds");
+    return array[i];
 }
 
 template <typename elmtype>
 void CircularDynamicArray<elmtype>::addEnd(elmtype v) {
     // increases the size of the array by 1 and stores v at the end of the array.
     // Should double the capacity when the new element doesn't fit.
-    // TODO: implement wrap around array
-    if (size == capacitySize) capacitySize *= 2;
-    back = (back - 1 + size) % capacitySize;
+    if (size == capacitySize)
+    {
+        capacitySize *= 2;
+
+        elmtype* temp = new elmtype[capacitySize];
+        for (int i = 0; i < size; i++) temp[i] = array[i];
+
+        delete[] array;
+        array = temp;
+    }
+
     array[size] = v;
     size++;
 
 }
 
 template <typename elmtype>
-void CircularDynamicArray<elmtype>::addFront(elmtype v) {
+void CircularDynamicArray<elmtype>::addFront(elmtype v)
+{
     // increases the size of the array by 1 and stores v at the beginning of the array.
     // Should double the capacity when the new element doesn't fit.
     // The new element should be the item returned at index 0.
-    // TODO: implement this actual part >:3
-    if (size == capacitySize) capacitySize *= 2;
-    front = (front - 1) % capacitySize;
+    if (size == capacitySize)
+    {
+        capacitySize *= 2;
+
+        elmtype* temp = new elmtype[capacitySize];
+        for (int i = size - 1; i >= 0; i++) temp[(i + 1) % capacitySize] = array[i];
+
+        delete[] array;
+        array = temp;
+    }
+    else // if there is already room
+    {
+        for (int i = 0; i < size; i++) array[(i + 1) % capacitySize] = array[i];
+    }
+    // this wraps around
+    front = (front - 1 + capacitySize) % capacitySize;
+    array[front] = v;
     size++;
 
 }
@@ -158,7 +181,7 @@ template <typename elmtype>
 int CircularDynamicArray<elmtype>::linearSearch(elmtype e) {
     // Performs a linear search of the array looking for the item e.
     // Returns the index of the item if found or -1 otherwise.
-    for (int i = 0; i < size; i++) if (array[i] == e) return e;
+    for (int i = 0; i < size; i++) if (array[i] == e) return i;
 
     return -1;
 }
