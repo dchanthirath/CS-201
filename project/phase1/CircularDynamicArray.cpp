@@ -8,7 +8,11 @@ class CircularDynamicArray {
 public:
     CircularDynamicArray();
     explicit CircularDynamicArray(int s);
+    // rule of three
     ~CircularDynamicArray();
+    CircularDynamicArray(const CircularDynamicArray &old);
+    CircularDynamicArray& operator=(const CircularDynamicArray& rhs);
+
     elmtype& operator[](int i);
 
     void addEnd(elmtype v);
@@ -29,7 +33,55 @@ public:
 
 private:
     int size, capacitySize, front;
-    int *array;
+    elmtype *array;
+    elmtype error;
+
+    // helper functions
+    // for quick select
+    // TODO: delete arr, just modift array in private
+    static int partition(int arr[], int l, int r)
+    {
+        int x = arr[r], i = l;
+        // TODO: shift front index
+        for (int j = l; j <= r - 1; j++) {
+            if (arr[j] <= x) {
+                std::swap(arr[i], arr[j]);
+                i++;
+            }
+        }
+        std::swap(arr[i], arr[r]);
+        return i;
+    }
+
+    int kthSmallest(int arr[], int l, int r, int k)
+    {
+        // If k is smaller than number of
+        // elements in array
+        if (k > 0 && k <= r - l + 1) {
+
+            // Partition the array around last
+            // element and get position of pivot
+            // element in sorted array
+            const int index = partition(arr, l, r);
+
+            // If position is same as k
+            if (index - l == k - 1)
+                return arr[index];
+
+            // If position is more, recur
+            // for left subarray
+            if (index - l > k - 1)
+                return kthSmallest(arr, l, index - 1, k);
+
+            // Else recur for right subarray
+            return kthSmallest(arr, index + 1, r,
+                                k - index + l - 1);
+        }
+
+        // If k is more than number of
+        // elements in array
+        return size;
+    }
 };
 
 template <typename elmtype>
@@ -44,7 +96,8 @@ template <typename elmtype>
 CircularDynamicArray<elmtype>::CircularDynamicArray(int s) {
     // For this constructor the array should be of capacity and size s
     array = new elmtype[capacitySize = s];
-    size = front = 0;
+    size = s;
+    front = 0;
 }
 
 template <typename elmtype>
@@ -54,11 +107,59 @@ CircularDynamicArray<elmtype>::~CircularDynamicArray() {
 }
 
 template <typename elmtype>
-elmtype& CircularDynamicArray<elmtype>::operator[](int i) {
+CircularDynamicArray<elmtype>::CircularDynamicArray(const CircularDynamicArray& old)
+{
+    // copy constructor
+    // makes a deep copy of the CircularDynamicArray ref
+    // named old into current object
+
+    // allocate new memory and copy elements
+    array = new elmtype[old.capacitySize];
+    for (int i = 0; i < old.size; i++)
+        array[i] = old.array[i];
+
+    // reallocating memory
+    capacitySize = old.capacitySize;
+    size = old.size;
+    front = old.front;
+}
+
+template <typename elmtype>
+CircularDynamicArray<elmtype>& CircularDynamicArray<elmtype>::operator=(const CircularDynamicArray& rhs)
+{
+    // copy assignment operator
+    if (this != rhs)
+    {
+        // allocate new memory and copy elements
+        elmtype* new_array = new elmtype[rhs.capacitySize];
+        for (int i = 0; i < rhs.size; i++)
+            array[i] = rhs.array[i];
+
+        // deallocate old memory
+        delete[] array;
+
+        // allocate new memory
+        array = new_array;
+
+        capacitySize = rhs.capacitySize;
+        size = rhs.size;
+        front = rhs.front;
+    }
+
+    // by convention always return *this
+    return *this;
+}
+
+template <typename elmtype>
+elmtype& CircularDynamicArray<elmtype>::operator[](int i)
+{
     // Traditional [] operator.
     // Should print a message if i is out of bounds and
     // return a reference to value of type elmtype stored in the class for this purpose
-    if (i < 0 || i >= size) throw std::out_of_range("i is out of bounds");
+    if (i < 0 || i >= size) {
+        std::cout << "i is out of bounds" << std::endl;
+        return error;
+    }
 
     return array[(front + i) % capacitySize];
 }
@@ -157,6 +258,7 @@ void CircularDynamicArray<elmtype>::delFront() {
         array = temp;
 
         capacitySize /= 2;
+        front = 0;
     }
 }
 
@@ -188,10 +290,13 @@ elmtype CircularDynamicArray<elmtype>::QSelection(int k) {
     // returns the kth smallest element in the array using the quickselect algorithm.
     // This method should choose a pivot element at random.
 
-    // recurse on only one side
-    // for random pivot
-    // kinda like binary search but we're just recursing through the left or right side of array
+    // TODO: need to adjust for array wrapping
+    // should be the front;
+    int left = (front + capacitySize) % capacitySize;
+    // should be the back;
+    int right = size % capacitySize;
 
+    return kthSmallest(array, left, right, k);
 }
 
 template <typename elmtype>

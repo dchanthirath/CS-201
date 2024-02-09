@@ -7,7 +7,7 @@ template <typename T>
 class Queue {
 public:
     Queue();
-    Queue(int s);
+    explicit Queue(int s);
 
     // void enqueue(int x);
     void enqueue(const T& x);

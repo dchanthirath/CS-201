@@ -53,10 +53,10 @@ int main(){
 	// A => "10 0 1 2 3 4 5 6 7 8 9 15 19"
 	cout << "Select is " << A.linearSearch(5) << endl;
 	// A => "10 0 1 2 3 4 5 6 7 8 9 15 19" Search => 6
-	cout << "Select is " << A.QSelect(3) << endl;
+	cout << "Select is " << A.QSelection(3) << endl;
     // Select => 2	
 	
-	A.Sort();
+	A.sort();
 	// A => "0 1 2 3 4 5 6 7 8 9 10 15 19"
 	A.addEnd(11); A.addFront(1); A.addFront(2); A.addFront(3);
 	cout << "capacity is " << A.capacity() << endl;

@@ -73,6 +73,12 @@ build CMakeFiles/CS_201.dir/labs/queueu.cpp.o: CXX_COMPILER__CS_201_unscanned_De
   OBJECT_DIR = CMakeFiles/CS_201.dir
   OBJECT_FILE_DIR = CMakeFiles/CS_201.dir/labs
 
+build CMakeFiles/CS_201.dir/project/phase1/Phase1Main_S24.cpp.o: CXX_COMPILER__CS_201_unscanned_Debug /cygdrive/c/Users/Donald/CLionProjects/CS-201/project/phase1/Phase1Main_S24.cpp || cmake_object_order_depends_target_CS_201
+  DEP_FILE = CMakeFiles/CS_201.dir/project/phase1/Phase1Main_S24.cpp.o.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/CS_201.dir
+  OBJECT_FILE_DIR = CMakeFiles/CS_201.dir/project/phase1
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target CS_201
@@ -81,7 +87,7 @@ build CMakeFiles/CS_201.dir/labs/queueu.cpp.o: CXX_COMPILER__CS_201_unscanned_De
 #############################################
 # Link the executable CS_201.exe
 
-build CS_201.exe: CXX_EXECUTABLE_LINKER__CS_201_Debug CMakeFiles/CS_201.dir/project/phase1/main.cpp.o CMakeFiles/CS_201.dir/project/phase1/CircularDynamicArray.cpp.o CMakeFiles/CS_201.dir/labs/main.cpp.o CMakeFiles/CS_201.dir/labs/queueu.cpp.o
+build CS_201.exe: CXX_EXECUTABLE_LINKER__CS_201_Debug CMakeFiles/CS_201.dir/project/phase1/main.cpp.o CMakeFiles/CS_201.dir/project/phase1/CircularDynamicArray.cpp.o CMakeFiles/CS_201.dir/labs/main.cpp.o CMakeFiles/CS_201.dir/labs/queueu.cpp.o CMakeFiles/CS_201.dir/project/phase1/Phase1Main_S24.cpp.o
   FLAGS = -g
   LINK_FLAGS = -Wl,--enable-auto-import
   OBJECT_DIR = CMakeFiles/CS_201.dir
