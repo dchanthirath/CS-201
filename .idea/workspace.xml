@@ -20,23 +20,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80ff20b4-dc4b-4162-99b8-309b94c3ef3a" name="Changes" comment="fixed addFront">
-      <change afterPath="$PROJECT_DIR$/a.exe" afterDir="false" />
+    <list default="true" id="80ff20b4-dc4b-4162-99b8-309b94c3ef3a" name="Changes" comment="Add and delete functions are fully working&#10;made progress on quick select algorithm">
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-d9df006835315e94cc6a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2024-02-07T21-29-00-0899.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-CS_201-Debug-2f86f86338fc03d074eb.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-6b4a3c9ecb4ba861d3f0.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2024-02-07T18-33-41-0141.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-CS_201-Debug-b045bf0004c77bc493b1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/labs/Queue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/labs/Queue.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/phase1/CircularDynamicArray.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase1/CircularDynamicArray.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/phase1/Phase1Main_S24.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase1/Phase1Main_S24.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/phase1/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase1/a.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/phase1/a.exe.stackdump" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase1/a.exe.stackdump" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/phase1/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase1/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/phase1/makefile" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase1/makefile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,14 +120,9 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="CMake Application.CS_201" />
       <item itemvalue="CMake Debug.CS_201" />
+      <item itemvalue="CMake Application.CS_201" />
     </list>
     <recent_temporary>
       <list>
@@ -173,7 +156,7 @@
       <workItem from="1707254358754" duration="9521000" />
       <workItem from="1707314570848" duration="1030000" />
       <workItem from="1707316661469" duration="18826000" />
-      <workItem from="1707408594006" duration="10544000" />
+      <workItem from="1707408594006" duration="13115000" />
     </task>
     <task id="LOCAL-00001" summary="finally added lab3 and replaced the make file with cmakelists">
       <option name="closed" value="true" />
@@ -319,7 +302,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707340704681</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Add and delete functions are fully working&#10;made progress on quick select algorithm">
+      <option name="closed" value="true" />
+      <created>1707437533527</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1707437533527</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -348,7 +339,8 @@
     <MESSAGE value="fixed addFront and delEnd" />
     <MESSAGE value="fixed delFront, delEnd, addEnd" />
     <MESSAGE value="fixed addFront" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed addFront" />
+    <MESSAGE value="Add and delete functions are fully working&#10;made progress on quick select algorithm" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add and delete functions are fully working&#10;made progress on quick select algorithm" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
