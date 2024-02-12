@@ -40,7 +40,6 @@ private:
     // for quick select
     int partition(int l, int r);
     int kthSmallest(int l, int r, int k);
-    void heapify(int N, int i);
 
     void merge(int left, int mid, int right);
     void mergeSort(int begin, int end);
@@ -309,42 +308,6 @@ elmtype CircularDynamicArray<elmtype>::QSelection(int k) {
 }
 
 template <typename elmtype>
-void CircularDynamicArray<elmtype>::heapify(int N, int i)
-{
-    // Initialize largest as root
-    int largest = i;
-
-    // left = 2*i + 1
-    int l = 2 * i + 1;
-
-    // right = 2*i + 2
-    int r = 2 * i + 2;
-
-    // adjusting for the wrap around
-    l = (front + l) % capacitySize;
-    r = (front + r) % capacitySize;
-    largest = (front + largest) % capacitySize;
-
-    // If left child is larger than root
-    if (l < N && array[l] > array[largest])
-        largest = l;
-
-    // If right child is larger than largest
-    // so far
-    if (r < N && array[r] > array[largest])
-        largest = r;
-
-    // If largest is not root
-    if (largest != i) {
-        std::swap(array[i], array[largest]);
-
-        // Recursively heapify the affected
-        // sub-tree
-        heapify(N, largest);
-    }
-}
-
-template <typename elmtype>
 void CircularDynamicArray<elmtype>::merge(int left, int mid, int right)
 {
     // Merges two subarrays of array[].
@@ -359,34 +322,36 @@ void CircularDynamicArray<elmtype>::merge(int left, int mid, int right)
 
     // Copy data to temp arrays leftArray[] and rightArray[]
     for (auto i = 0; i < subArrayOne; i++)
-        leftArray[i] = array[left + i];
+        leftArray[i] = array[(left + i) % capacitySize];
     for (auto j = 0; j < subArrayTwo; j++)
-        rightArray[j] = array[mid + 1 + j];
+        rightArray[j] = array[(mid + 1 + j) % capacitySize];
 
     auto indexOfSubArrayOne = 0, indexOfSubArrayTwo = 0;
     int indexOfMergedArray = left;
 
     // Merge the temp arrays back into array[left..right]
-    while (indexOfSubArrayOne < subArrayOne
-           && indexOfSubArrayTwo < subArrayTwo) {
+    while (indexOfSubArrayOne < subArrayOne && indexOfSubArrayTwo < subArrayTwo &&
+           (indexOfMergedArray + indexOfSubArrayOne) % capacitySize < capacitySize &&
+           (indexOfMergedArray + indexOfSubArrayTwo) % capacitySize < capacitySize) {
         if (leftArray[indexOfSubArrayOne]
-            <= rightArray[indexOfSubArrayTwo]) {
-            array[indexOfMergedArray]
+                <= rightArray[indexOfSubArrayTwo]) {
+            array[(indexOfMergedArray + indexOfSubArrayOne) % capacitySize]
                 = leftArray[indexOfSubArrayOne];
             indexOfSubArrayOne++;
-            }
-        else {
-            array[indexOfMergedArray]
+        } else {
+            array[(indexOfMergedArray + indexOfSubArrayTwo) % capacitySize]
                 = rightArray[indexOfSubArrayTwo];
             indexOfSubArrayTwo++;
         }
         indexOfMergedArray++;
-           }
+    }
 
     // Copy the remaining elements of
     // left[], if there are any
-    while (indexOfSubArrayOne < subArrayOne) {
-        array[indexOfMergedArray]
+    while (indexOfSubArrayOne < subArrayOne &&
+        (indexOfMergedArray + indexOfSubArrayOne) % capacitySize < capacitySize)
+    {
+        array[(indexOfMergedArray + indexOfSubArrayOne) % capacitySize]
             = leftArray[indexOfSubArrayOne];
         indexOfSubArrayOne++;
         indexOfMergedArray++;
@@ -394,12 +359,15 @@ void CircularDynamicArray<elmtype>::merge(int left, int mid, int right)
 
     // Copy the remaining elements of
     // right[], if there are any
-    while (indexOfSubArrayTwo < subArrayTwo) {
-        array[indexOfMergedArray]
+    while (indexOfSubArrayTwo < subArrayTwo &&
+        (indexOfMergedArray + indexOfSubArrayTwo) % capacitySize < capacitySize)
+    {
+        array[(indexOfMergedArray + indexOfSubArrayTwo) % capacitySize]
             = rightArray[indexOfSubArrayTwo];
         indexOfSubArrayTwo++;
         indexOfMergedArray++;
     }
+
     delete[] leftArray;
     delete[] rightArray;
 }
@@ -409,12 +377,13 @@ void CircularDynamicArray<elmtype>::mergeSort(int begin, int end)
 {
     // begin is for left index and end is right index
     // of the sub-array of arr to be sorted
-    if (begin >= end) return;
-
-    int mid = begin + (end - begin) / 2;
-    mergeSort(begin, mid);
-    mergeSort(mid + 1, end);
-    merge(begin, mid, end);
+    if (begin < end)
+    {
+        int mid = (begin + end) / 2;
+        mergeSort(begin, mid);
+        mergeSort(mid + 1, end);
+        merge((begin + size) % size, (mid + size) % size, (end + size) % size);
+    }
 }
 
 template <typename elmtype>
@@ -422,25 +391,8 @@ void CircularDynamicArray<elmtype>::sort() {
     // Sorts the values in the array using a comparison based O(N lg N) algorithm.
     // The sort must be stable.
 
-    // // heap sort
-    // // Build heap (rearrange array)
-    // for (int i = size / 2 - 1; i >= 0; i--)
-    //     heapify(size, i);
-    //
-    // // One by one extract an element
-    // // from heap
-    // for (int i = size - 1; i > 0; i--)
-    // {
-    //     // Move current root to end
-    //     std::swap(array[front], array[(front + i) % capacitySize]);
-    //     // std::swap(array[(front + i) % capacitySize], array[front]);
-    //
-    //     // call max heapify on the reduced heap
-    //     heapify(i, 0);
-    // }
-
     // trying merge sort instead
-    mergeSort(0, size - 1);
+    mergeSort(front, (front + size - 1) % capacitySize);
 }
 
 template <typename elmtype>
