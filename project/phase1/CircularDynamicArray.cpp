@@ -296,9 +296,11 @@ elmtype CircularDynamicArray<elmtype>::QSelection(int k) {
     // This method should choose a pivot element at random.
 
     // should be the front;
-    int left = front;
+    // int left = front;
+    int left = 0;
     // should be the back;
-    int right = (front + size - 1) % capacitySize;
+    // int right = (front + size - 1) % size;
+    int right = size - 2;
 
     return kthSmallest(left, right, k);
 }
@@ -314,6 +316,11 @@ void CircularDynamicArray<elmtype>::heapify(int N, int i)
 
     // right = 2*i + 2
     int r = 2 * i + 2;
+
+    // adjusting for the wrap around
+    l = (front + l) % capacitySize;
+    r = (front + r) % capacitySize;
+    largest = (front + largest) % capacitySize;
 
     // If left child is larger than root
     if (l < N && array[l] > array[largest])
@@ -350,6 +357,7 @@ void CircularDynamicArray<elmtype>::sort() {
     {
         // Move current root to end
         std::swap(array[front], array[(front + i) % capacitySize]);
+        // std::swap(array[(front + i) % capacitySize], array[front]);
 
         // call max heapify on the reduced heap
         heapify(i, 0);

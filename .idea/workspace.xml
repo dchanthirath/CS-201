@@ -20,10 +20,12 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80ff20b4-dc4b-4162-99b8-309b94c3ef3a" name="Changes" comment="attemped to run cmake">
+    <list default="true" id="80ff20b4-dc4b-4162-99b8-309b94c3ef3a" name="Changes" comment="attempting to fix sort">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CS_201.dir/project/phase1/CircularDynamicArray.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CS_201.dir/project/phase1/CircularDynamicArray.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CS_201.dir/project/phase1/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CS_201.dir/project/phase1/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/phase1/CircularDynamicArray.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase1/CircularDynamicArray.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/phase1/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase1/a.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/phase1/a.exe.stackdump" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase1/a.exe.stackdump" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/phase1/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase1/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +163,7 @@
       <workItem from="1707451491534" duration="725000" />
       <workItem from="1707487012961" duration="2302000" />
       <workItem from="1707492631979" duration="4000" />
-      <workItem from="1707494302385" duration="8348000" />
+      <workItem from="1707494302385" duration="11132000" />
     </task>
     <task id="LOCAL-00001" summary="finally added lab3 and replaced the make file with cmakelists">
       <option name="closed" value="true" />
@@ -363,7 +365,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707704824254</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="attempting to fix sort">
+      <option name="closed" value="true" />
+      <created>1707706225762</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1707706225762</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -399,7 +409,8 @@
     <MESSAGE value="adjusted addEnd to do a wrap around for the array" />
     <MESSAGE value="fixed copy assignment operator to actually copy to new array" />
     <MESSAGE value="attemped to run cmake" />
-    <option name="LAST_COMMIT_MESSAGE" value="attemped to run cmake" />
+    <MESSAGE value="attempting to fix sort" />
+    <option name="LAST_COMMIT_MESSAGE" value="attempting to fix sort" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
