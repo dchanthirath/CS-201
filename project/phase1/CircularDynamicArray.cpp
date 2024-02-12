@@ -161,7 +161,7 @@ void CircularDynamicArray<elmtype>::addFront(elmtype v)
     front = (front + capacitySize - 1) % capacitySize;
     array[front] = v;
     size++;
-
+    // maybe there is something wrong here???
     if (size == capacitySize)
     {
         // allocating new memory and copying elements
@@ -330,17 +330,14 @@ void CircularDynamicArray<elmtype>::merge(int left, int mid, int right)
     int indexOfMergedArray = left;
 
     // Merge the temp arrays back into array[left..right]
-    while (indexOfSubArrayOne < subArrayOne && indexOfSubArrayTwo < subArrayTwo &&
-           (indexOfMergedArray + indexOfSubArrayOne) % capacitySize < capacitySize &&
-           (indexOfMergedArray + indexOfSubArrayTwo) % capacitySize < capacitySize) {
-        if (leftArray[indexOfSubArrayOne]
-                <= rightArray[indexOfSubArrayTwo]) {
-            array[(indexOfMergedArray + indexOfSubArrayOne) % capacitySize]
-                = leftArray[indexOfSubArrayOne];
+    while (indexOfSubArrayOne < subArrayOne && indexOfSubArrayTwo < subArrayTwo) {
+        if (leftArray[indexOfSubArrayOne] <= rightArray[indexOfSubArrayTwo]) {
+            // array[(indexOfMergedArray + indexOfSubArrayOne) % capacitySize] = leftArray[indexOfSubArrayOne];
+            array[(indexOfMergedArray + front) % capacitySize] = leftArray[indexOfSubArrayOne];
             indexOfSubArrayOne++;
         } else {
-            array[(indexOfMergedArray + indexOfSubArrayTwo) % capacitySize]
-                = rightArray[indexOfSubArrayTwo];
+            // array[(indexOfMergedArray + indexOfSubArrayTwo) % capacitySize] = rightArray[indexOfSubArrayTwo];
+            array[(indexOfMergedArray + front) % capacitySize] = rightArray[indexOfSubArrayTwo];
             indexOfSubArrayTwo++;
         }
         indexOfMergedArray++;
@@ -348,22 +345,20 @@ void CircularDynamicArray<elmtype>::merge(int left, int mid, int right)
 
     // Copy the remaining elements of
     // left[], if there are any
-    while (indexOfSubArrayOne < subArrayOne &&
-        (indexOfMergedArray + indexOfSubArrayOne) % capacitySize < capacitySize)
-    {
-        array[(indexOfMergedArray + indexOfSubArrayOne) % capacitySize]
-            = leftArray[indexOfSubArrayOne];
+    while (indexOfSubArrayOne < subArrayOne) {
+        // && (indexOfMergedArray + indexOfSubArrayOne) % capacitySize < capacitySize) {
+        // array[(indexOfMergedArray + indexOfSubArrayOne) % capacitySize] = leftArray[indexOfSubArrayOne];
+        array[(indexOfMergedArray + front) % capacitySize] = leftArray[indexOfSubArrayOne];
         indexOfSubArrayOne++;
         indexOfMergedArray++;
     }
 
     // Copy the remaining elements of
     // right[], if there are any
-    while (indexOfSubArrayTwo < subArrayTwo &&
-        (indexOfMergedArray + indexOfSubArrayTwo) % capacitySize < capacitySize)
-    {
-        array[(indexOfMergedArray + indexOfSubArrayTwo) % capacitySize]
-            = rightArray[indexOfSubArrayTwo];
+    while (indexOfSubArrayTwo < subArrayTwo) {
+        // && (indexOfMergedArray + indexOfSubArrayTwo) % capacitySize < capacitySize) {
+        // array[(indexOfMergedArray + indexOfSubArrayTwo) % capacitySize] = rightArray[indexOfSubArrayTwo];
+        array[(indexOfMergedArray + front) % capacitySize] = rightArray[indexOfSubArrayTwo];
         indexOfSubArrayTwo++;
         indexOfMergedArray++;
     }
@@ -382,7 +377,7 @@ void CircularDynamicArray<elmtype>::mergeSort(int begin, int end)
         int mid = (begin + end) / 2;
         mergeSort(begin, mid);
         mergeSort(mid + 1, end);
-        merge((begin + size) % size, (mid + size) % size, (end + size) % size);
+        merge(begin, mid, end);
     }
 }
 
@@ -393,6 +388,8 @@ void CircularDynamicArray<elmtype>::sort() {
 
     // trying merge sort instead
     mergeSort(front, (front + size - 1) % capacitySize);
+    // std::cout << "CDA array: ";
+    // for (int i = 0; i < size; i++) std::cout << array[i] << " "; std::cout << std::endl;
 }
 
 template <typename elmtype>

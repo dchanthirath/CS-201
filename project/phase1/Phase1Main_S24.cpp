@@ -49,15 +49,20 @@ int main(){
 	// A => "0 1 2 3 4 5 6 7 8 9 15 19" Search => -1
 	cout << "Select is " << A.binSearch(15) << endl;
 	// A => "0 1 2 3 4 5 6 7 8 9 15 19" Search => 10	
-	A.addFront(10); 
+	A.addFront(10);
 	// A => "10 0 1 2 3 4 5 6 7 8 9 15 19"
 	cout << "Select is " << A.linearSearch(5) << endl;
 	// A => "10 0 1 2 3 4 5 6 7 8 9 15 19" Search => 6
 	cout << "Select is " << A.QSelection(3) << endl;
-    // Select => 2	
+    // Select => 2
+	cout << "A: ";
+	for (int i = 0; i < A.length(); i++) cout << A[i] << " "; cout << endl;
 	
 	A.sort();
 	// A => "0 1 2 3 4 5 6 7 8 9 10 15 19"
+	cout << "main sorted: ";
+	for (int i = 0; i < A.length(); i++) cout << A[i] << " "; cout << endl;
+
 	A.addEnd(11); A.addFront(1); A.addFront(2); A.addFront(3);
 	cout << "capacity is " << A.capacity() << endl;
 	// A => "3 2 1 0 1 2 3 4 5 6 7 8 9 10 15 19 11"	  capacity => 32
