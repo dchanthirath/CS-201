@@ -81,5 +81,12 @@ int main()
     int k = 3;
     cout << "kth (" << k << ") smallest element: " << array3.QSelection(k) << endl;
 
+    array3.sort();
+    cout << "array3: ";
+    for (int i = 0; i < array3.length(); i++) {
+        cout << array3[i] << " ";
+    }
+    cout << endl;
+
     return 0;
 }

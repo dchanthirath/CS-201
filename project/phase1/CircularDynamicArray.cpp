@@ -38,50 +38,9 @@ private:
 
     // helper functions
     // for quick select
-    // TODO: delete arr, just modift array in private
-    static int partition(int arr[], int l, int r)
-    {
-        int x = arr[r], i = l;
-        // TODO: shift front index
-        for (int j = l; j <= r - 1; j++) {
-            if (arr[j] <= x) {
-                std::swap(arr[i], arr[j]);
-                i++;
-            }
-        }
-        std::swap(arr[i], arr[r]);
-        return i;
-    }
-
-    int kthSmallest(int arr[], int l, int r, int k)
-    {
-        // If k is smaller than number of
-        // elements in array
-        if (k > 0 && k <= r - l + 1) {
-
-            // Partition the array around last
-            // element and get position of pivot
-            // element in sorted array
-            const int index = partition(arr, l, r);
-
-            // If position is same as k
-            if (index - l == k - 1)
-                return arr[index];
-
-            // If position is more, recur
-            // for left subarray
-            if (index - l > k - 1)
-                return kthSmallest(arr, l, index - 1, k);
-
-            // Else recur for right subarray
-            return kthSmallest(arr, index + 1, r,
-                                k - index + l - 1);
-        }
-
-        // If k is more than number of
-        // elements in array
-        return size;
-    }
+    int partition(int l, int r);
+    int kthSmallest(int l, int r, int k);
+    void heapify(int N, int i);
 };
 
 template <typename elmtype>
@@ -128,10 +87,10 @@ template <typename elmtype>
 CircularDynamicArray<elmtype>& CircularDynamicArray<elmtype>::operator=(const CircularDynamicArray& rhs)
 {
     // copy assignment operator
-    if (this != rhs)
+    if (this != &rhs)
     {
         // allocate new memory and copy elements
-        elmtype* new_array = new elmtype[rhs.capacitySize];
+        auto* new_array = new elmtype[rhs.capacitySize];
         for (int i = 0; i < rhs.size; i++)
             array[i] = rhs.array[i];
 
@@ -177,7 +136,7 @@ void CircularDynamicArray<elmtype>::addEnd(elmtype v) {
     if (size == capacitySize)
     {
         // allocate new memory and copying elements
-        elmtype* temp = new elmtype[capacitySize * 2];
+        auto* temp = new elmtype[capacitySize * 2];
         for (int i = 0; i < size; i++) // assigning elements from beginning of temp
             temp[i] = array[(front + i) % capacitySize];
         // deallocating old array
@@ -203,7 +162,7 @@ void CircularDynamicArray<elmtype>::addFront(elmtype v)
     if (size == capacitySize)
     {
         // allocating new memory and copying elements
-        elmtype* temp = new elmtype[capacitySize * 2];
+        auto* temp = new elmtype[capacitySize * 2];
         for (int i = 0; i < size; i++)
             temp[i] = array[(front + i) % capacitySize];
         // deallocating memory
@@ -225,7 +184,7 @@ void CircularDynamicArray<elmtype>::delEnd() {
     if (size == (capacitySize / 4))
     {
         // allocating new memory and copying elements
-        elmtype* temp = new elmtype[capacitySize / 2];
+        auto* temp = new elmtype[capacitySize / 2];
         for (int i = 0; i < size; i++)
             temp[i] = array[(front + i) % capacitySize];
         // deallocating memory
@@ -249,7 +208,7 @@ void CircularDynamicArray<elmtype>::delFront() {
     if (size == (capacitySize / 4))
     {
         // allocating new memory and copying elements
-        elmtype* temp = new elmtype[capacitySize / 2];
+        auto* temp = new elmtype[capacitySize / 2];
         for (int i = 0; i < size; i++)
             temp[i] = array[(front + i) % capacitySize];
         // deallocating memory
@@ -285,6 +244,52 @@ void CircularDynamicArray<elmtype>::clear() {
     size = front = 0;
 }
 
+template<typename elmtype>
+int CircularDynamicArray<elmtype>::partition(int l, int r)
+{
+    elmtype x = array[r];
+    int i = l;
+    // TODO: shift front index
+    for (int j = l; j <= r - 1; j++) {
+        if (array[j] <= x) {
+            std::swap(array[i], array[j]);
+            i++;
+        }
+    }
+    std::swap(array[i], array[r]);
+    return i;
+}
+
+template <typename elmtype>
+int CircularDynamicArray<elmtype>::kthSmallest(int l, int r, int k)
+{
+    // If k is smaller than number of
+    // elements in array
+    if (k > 0 && k <= r - l + 1) {
+
+        // Partition the array around last
+        // element and get position of pivot
+        // element in sorted array
+        const int index = partition(l, r);
+
+        // If position is same as k
+        if (index == ((l + k - 1) % capacitySize))
+            return array[index];
+
+        // If position is more, recur
+        // for left subarray
+        if (index < (l + k - 1) % capacitySize)
+            return kthSmallest(index + 1, r, k - index + l - 1);
+
+        // Else recur for right subarray
+        return kthSmallest(l, index - 1, k);
+    }
+
+    // If k is more than number of
+    // elements in array
+    return size;
+}
+
 template <typename elmtype>
 elmtype CircularDynamicArray<elmtype>::QSelection(int k) {
     // returns the kth smallest element in the array using the quickselect algorithm.
@@ -292,11 +297,42 @@ elmtype CircularDynamicArray<elmtype>::QSelection(int k) {
 
     // TODO: need to adjust for array wrapping
     // should be the front;
-    int left = (front + capacitySize) % capacitySize;
+    int left = front;
     // should be the back;
-    int right = size % capacitySize;
+    int right = (front + size - 1) % capacitySize;
 
-    return kthSmallest(array, left, right, k);
+    return kthSmallest(left, right, k);
+}
+
+template <typename elmtype>
+void CircularDynamicArray<elmtype>::heapify(int N, int i)
+{
+    // Initialize largest as root
+    int largest = i;
+
+    // left = 2*i + 1
+    int l = 2 * i + 1;
+
+    // right = 2*i + 2
+    int r = 2 * i + 2;
+
+    // If left child is larger than root
+    if (l < N && array[l] > array[largest])
+        largest = l;
+
+    // If right child is larger than largest
+    // so far
+    if (r < N && array[r] > array[largest])
+        largest = r;
+
+    // If largest is not root
+    if (largest != i) {
+        std::swap(array[i], array[largest]);
+
+        // Recursively heapify the affected
+        // sub-tree
+        heapify(N, largest);
+    }
 }
 
 template <typename elmtype>
@@ -304,6 +340,21 @@ void CircularDynamicArray<elmtype>::sort() {
     // Sorts the values in the array using a comparison based O(N lg N) algorithm.
     // The sort must be stable.
 
+    // heap sort
+    // Build heap (rearrange array)
+    for (int i = size / 2 - 1; i >= 0; i--)
+        heapify(size, i);
+
+    // One by one extract an element
+    // from heap
+    for (int i = size - 1; i > 0; i--)
+    {
+        // Move current root to end
+        std::swap(array[front], array[(front + i) % capacitySize]);
+
+        // call max heapify on the reduced heap
+        heapify(i, 0);
+    }
 }
 
 template <typename elmtype>
