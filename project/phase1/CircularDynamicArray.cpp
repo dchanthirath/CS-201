@@ -149,6 +149,8 @@ void CircularDynamicArray<elmtype>::addEnd(elmtype v) {
         capacitySize *= 2;
         front = 0;
     }
+    std::cout << "CDA array (end): ";
+    for (int i = 0; i < size; i++) std::cout << array[i] << " "; std::cout << std::endl;
 }
 
 template <typename elmtype>
@@ -175,6 +177,8 @@ void CircularDynamicArray<elmtype>::addFront(elmtype v)
         capacitySize *= 2;
         front = 0;
     }
+    std::cout << "CDA array (front): ";
+    for (int i = 0; i < size; i++) std::cout << array[i] << " "; std::cout << std::endl;
 }
 
 template <typename elmtype>
