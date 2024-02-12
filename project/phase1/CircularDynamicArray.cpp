@@ -240,7 +240,7 @@ void CircularDynamicArray<elmtype>::clear() {
     // Frees any space currently used and starts over with an array of capacity 2 and size 0
 
     delete[] array;
-    array = new int[capacitySize = 2];
+    array = new elmtype[capacitySize = 2];
     size = front = 0;
 }
 
@@ -249,7 +249,6 @@ int CircularDynamicArray<elmtype>::partition(int l, int r)
 {
     elmtype x = array[r];
     int i = l;
-    // TODO: shift front index
     for (int j = l; j <= r - 1; j++) {
         if (array[j] <= x) {
             std::swap(array[i], array[j]);
@@ -295,7 +294,6 @@ elmtype CircularDynamicArray<elmtype>::QSelection(int k) {
     // returns the kth smallest element in the array using the quickselect algorithm.
     // This method should choose a pivot element at random.
 
-    // TODO: need to adjust for array wrapping
     // should be the front;
     int left = front;
     // should be the back;
