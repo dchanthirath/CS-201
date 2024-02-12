@@ -41,6 +41,9 @@ private:
     int partition(int l, int r);
     int kthSmallest(int l, int r, int k);
     void heapify(int N, int i);
+
+    void merge(int left, int mid, int right);
+    void mergeSort(int begin, int end);
 };
 
 template <typename elmtype>
@@ -273,12 +276,12 @@ int CircularDynamicArray<elmtype>::kthSmallest(int l, int r, int k)
         const int index = partition(l, r);
 
         // If position is same as k
-        if (index == ((l + k - 1) % capacitySize))
+        if (index == (l + k - 1))
             return array[index];
 
         // If position is more, recur
         // for left subarray
-        if (index < (l + k - 1) % capacitySize)
+        if (index < (l + k - 1))
             return kthSmallest(index + 1, r, k - index + l - 1);
 
         // Else recur for right subarray
@@ -342,26 +345,102 @@ void CircularDynamicArray<elmtype>::heapify(int N, int i)
 }
 
 template <typename elmtype>
+void CircularDynamicArray<elmtype>::merge(int left, int mid, int right)
+{
+    // Merges two subarrays of array[].
+    // First subarray is arr[begin..mid]
+    // Second subarray is arr[mid+1..end]
+    int const subArrayOne = mid - left + 1;
+    int const subArrayTwo = right - mid;
+
+    // Create temp arrays
+    auto *leftArray = new elmtype[subArrayOne],
+         *rightArray = new elmtype[subArrayTwo];
+
+    // Copy data to temp arrays leftArray[] and rightArray[]
+    for (auto i = 0; i < subArrayOne; i++)
+        leftArray[i] = array[left + i];
+    for (auto j = 0; j < subArrayTwo; j++)
+        rightArray[j] = array[mid + 1 + j];
+
+    auto indexOfSubArrayOne = 0, indexOfSubArrayTwo = 0;
+    int indexOfMergedArray = left;
+
+    // Merge the temp arrays back into array[left..right]
+    while (indexOfSubArrayOne < subArrayOne
+           && indexOfSubArrayTwo < subArrayTwo) {
+        if (leftArray[indexOfSubArrayOne]
+            <= rightArray[indexOfSubArrayTwo]) {
+            array[indexOfMergedArray]
+                = leftArray[indexOfSubArrayOne];
+            indexOfSubArrayOne++;
+            }
+        else {
+            array[indexOfMergedArray]
+                = rightArray[indexOfSubArrayTwo];
+            indexOfSubArrayTwo++;
+        }
+        indexOfMergedArray++;
+           }
+
+    // Copy the remaining elements of
+    // left[], if there are any
+    while (indexOfSubArrayOne < subArrayOne) {
+        array[indexOfMergedArray]
+            = leftArray[indexOfSubArrayOne];
+        indexOfSubArrayOne++;
+        indexOfMergedArray++;
+    }
+
+    // Copy the remaining elements of
+    // right[], if there are any
+    while (indexOfSubArrayTwo < subArrayTwo) {
+        array[indexOfMergedArray]
+            = rightArray[indexOfSubArrayTwo];
+        indexOfSubArrayTwo++;
+        indexOfMergedArray++;
+    }
+    delete[] leftArray;
+    delete[] rightArray;
+}
+
+template <typename elmtype>
+void CircularDynamicArray<elmtype>::mergeSort(int begin, int end)
+{
+    // begin is for left index and end is right index
+    // of the sub-array of arr to be sorted
+    if (begin >= end) return;
+
+    int mid = begin + (end - begin) / 2;
+    mergeSort(begin, mid);
+    mergeSort(mid + 1, end);
+    merge(begin, mid, end);
+}
+
+template <typename elmtype>
 void CircularDynamicArray<elmtype>::sort() {
     // Sorts the values in the array using a comparison based O(N lg N) algorithm.
     // The sort must be stable.
 
-    // heap sort
-    // Build heap (rearrange array)
-    for (int i = size / 2 - 1; i >= 0; i--)
-        heapify(size, i);
+    // // heap sort
+    // // Build heap (rearrange array)
+    // for (int i = size / 2 - 1; i >= 0; i--)
+    //     heapify(size, i);
+    //
+    // // One by one extract an element
+    // // from heap
+    // for (int i = size - 1; i > 0; i--)
+    // {
+    //     // Move current root to end
+    //     std::swap(array[front], array[(front + i) % capacitySize]);
+    //     // std::swap(array[(front + i) % capacitySize], array[front]);
+    //
+    //     // call max heapify on the reduced heap
+    //     heapify(i, 0);
+    // }
 
-    // One by one extract an element
-    // from heap
-    for (int i = size - 1; i > 0; i--)
-    {
-        // Move current root to end
-        std::swap(array[front], array[(front + i) % capacitySize]);
-        // std::swap(array[(front + i) % capacitySize], array[front]);
-
-        // call max heapify on the reduced heap
-        heapify(i, 0);
-    }
+    // trying merge sort instead
+    mergeSort(0, size - 1);
 }
 
 template <typename elmtype>
