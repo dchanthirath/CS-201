@@ -129,7 +129,8 @@ void CircularDynamicArray<elmtype>::addEnd(elmtype v) {
     // Should double the capacity when the new element doesn't fit.
 
     // adding 'v' to the end of the array
-    array[size] = v;
+    int back = (front + size) % capacitySize; // wrap around for addEnd
+    array[back] = v;
     size++;
 
     // if full
