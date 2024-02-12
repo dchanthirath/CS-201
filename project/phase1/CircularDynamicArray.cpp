@@ -90,15 +90,15 @@ CircularDynamicArray<elmtype>& CircularDynamicArray<elmtype>::operator=(const Ci
     if (this != &rhs)
     {
         // allocate new memory and copy elements
-        auto* new_array = new elmtype[rhs.capacitySize];
+        auto* newArray = new elmtype[rhs.capacitySize];
         for (int i = 0; i < rhs.size; i++)
-            array[i] = rhs.array[i];
+            newArray[i] = rhs.array[i];
 
         // deallocate old memory
         delete[] array;
 
         // allocate new memory
-        array = new_array;
+        array = newArray;
 
         capacitySize = rhs.capacitySize;
         size = rhs.size;
