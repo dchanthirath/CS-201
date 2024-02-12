@@ -360,7 +360,10 @@ template <typename elmtype>
 int CircularDynamicArray<elmtype>::linearSearch(elmtype e) {
     // Performs a linear search of the array looking for the item e.
     // Returns the index of the item if found or -1 otherwise.
-    for (int i = 0; i < size; i++) if (array[i] == e) return i;
+
+    for (int i = 0; i < size; i++)
+        // the index to indicate front everytime
+        if (array[(front + i) % capacitySize] == e) return i;
 
     return -1;
 }
@@ -373,13 +376,18 @@ int CircularDynamicArray<elmtype>::binSearch(elmtype e) {
     int left = 0;
     int right = size - 1;
 
+    // TODO: adjust for wrap around
     while (left <= right)
     {
-        const int mid = (left + right) / 2;
-        if (array[mid] == e) return mid;
+        int mid = (left + right) / 2;
 
-        if (array[mid] < e) left = mid + 1;
-        else right = mid - 1;
+        if (array[mid] == e)
+            return mid;
+
+        if (array[mid] < e)
+            left = mid + 1;
+        else
+            right = mid - 1;
     }
 
     return -1;
