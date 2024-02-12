@@ -34,6 +34,13 @@ int main()
 
     A.sort();
     // A => "0 1 2 3 4 5 6 7 8 9 10 15 19"
+    cout << "sorted: ";
+    for (int i = 0; i < A.length(); i++)
+    {
+        cout << A[i] << " ";
+    }
+    cout << endl;
+
     A.addEnd(11); A.addFront(1); A.addFront(2); A.addFront(3);
     cout << "capacity is " << A.capacity() << endl;
     // A => "3 2 1 0 1 2 3 4 5 6 7 8 9 10 15 19 11"	  capacity => 32
