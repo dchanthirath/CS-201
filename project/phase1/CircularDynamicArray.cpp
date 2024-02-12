@@ -20,9 +20,8 @@ public:
     void delEnd();
     void delFront();
 
-    // clion suggested this (C++17)
-    [[nodiscard]] int length() const;
-    [[nodiscard]] int capacity() const;
+    int length() const;
+    int capacity() const;
     void clear();
 
     elmtype QSelection(int k);
@@ -92,7 +91,7 @@ CircularDynamicArray<elmtype>& CircularDynamicArray<elmtype>::operator=(const Ci
     if (this != &rhs)
     {
         // allocate new memory and copy elements
-        auto* newArray = new elmtype[rhs.capacitySize];
+        elmtype* newArray = new elmtype[rhs.capacitySize];
         for (int i = 0; i < rhs.size; i++)
             newArray[i] = rhs.array[i];
 
@@ -139,7 +138,7 @@ void CircularDynamicArray<elmtype>::addEnd(elmtype v) {
     if (size == capacitySize)
     {
         // allocate new memory and copying elements
-        auto* temp = new elmtype[capacitySize * 2];
+        elmtype* temp = new elmtype[capacitySize * 2];
         for (int i = 0; i < size; i++) // assigning elements from beginning of temp
             temp[i] = array[(front + i) % capacitySize];
         // deallocating old array
@@ -165,7 +164,7 @@ void CircularDynamicArray<elmtype>::addFront(elmtype v)
     if (size == capacitySize)
     {
         // allocating new memory and copying elements
-        auto* temp = new elmtype[capacitySize * 2];
+        elmtype* temp = new elmtype[capacitySize * 2];
         for (int i = 0; i < size; i++)
             temp[i] = array[(front + i) % capacitySize];
         // deallocating memory
@@ -187,7 +186,7 @@ void CircularDynamicArray<elmtype>::delEnd() {
     if (size == (capacitySize / 4))
     {
         // allocating new memory and copying elements
-        auto* temp = new elmtype[capacitySize / 2];
+        elmtype* temp = new elmtype[capacitySize / 2];
         for (int i = 0; i < size; i++)
             temp[i] = array[(front + i) % capacitySize];
         // deallocating memory
@@ -211,7 +210,7 @@ void CircularDynamicArray<elmtype>::delFront() {
     if (size == (capacitySize / 4))
     {
         // allocating new memory and copying elements
-        auto* temp = new elmtype[capacitySize / 2];
+        elmtype* temp = new elmtype[capacitySize / 2];
         for (int i = 0; i < size; i++)
             temp[i] = array[(front + i) % capacitySize];
         // deallocating memory
@@ -317,16 +316,16 @@ void CircularDynamicArray<elmtype>::merge(int left, int mid, int right)
     int const subArrayTwo = right - mid;
 
     // Create temp arrays
-    auto *leftArray = new elmtype[subArrayOne],
+    elmtype *leftArray = new elmtype[subArrayOne],
          *rightArray = new elmtype[subArrayTwo];
 
     // Copy data to temp arrays leftArray[] and rightArray[]
-    for (auto i = 0; i < subArrayOne; i++)
+    for (int i = 0; i < subArrayOne; i++)
         leftArray[i] = array[(left + i) % capacitySize];
-    for (auto j = 0; j < subArrayTwo; j++)
+    for (int j = 0; j < subArrayTwo; j++)
         rightArray[j] = array[(mid + 1 + j) % capacitySize];
 
-    auto indexOfSubArrayOne = 0, indexOfSubArrayTwo = 0;
+    int indexOfSubArrayOne = 0, indexOfSubArrayTwo = 0;
     int indexOfMergedArray = left;
 
     // Merge the temp arrays back into array[left..right]
