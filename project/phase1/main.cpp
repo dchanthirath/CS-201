@@ -13,49 +13,22 @@ void foo(CircularDynamicArray<int> x) {
 
 int main()
 {
-    CircularDynamicArray<int> A,B;
-    for(int i=0; i<10;i++) A.addEnd(i);
-    B = A;
+    CircularDynamicArray<int> A;
 
-    A.addEnd(15); A.addEnd(19);
-    // A => "0 1 2 3 4 5 6 7 8 9 15 19"
-    cout << "Select is " << A.linearSearch(5) << endl;
-    // A => "0 1 2 3 4 5 6 7 8 9 15 19" Search => 5
-    cout << "Select is " << A.binSearch(12) << endl;
-    // A => "0 1 2 3 4 5 6 7 8 9 15 19" Search => -1
-    cout << "Select is " << A.binSearch(15) << endl;
-    // A => "0 1 2 3 4 5 6 7 8 9 15 19" Search => 10
-    A.addFront(10);
-    // A => "10 0 1 2 3 4 5 6 7 8 9 15 19"
-    cout << "Select is " << A.linearSearch(5) << endl;
-    // A => "10 0 1 2 3 4 5 6 7 8 9 15 19" Search => 6
+    A.addFront(12);
+    A.addFront(15);
+    A.addFront(19);
+    A.addFront(17);
+    A.addFront(11);
 
-    // cout << "array: ";
-    // for (int i = 0; i < A.length(); i++) cout << A[i] << " "; cout << endl;
+    cout << "A: ";
+    for (int i = 0; i < A.length(); i++) cout << A[i] << " "; cout << endl;
 
-    cout << "Select is " << A.QSelection(3) << endl;
-    // Select => 2
+    A.delFront();
+    A.delFront();
 
-    A.sort();
-    // A => "0 1 2 3 4 5 6 7 8 9 10 15 19"
-    cout << "sorted: ";
-    for (int i = 0; i < A.length(); i++)
-    {
-        cout << A[i] << " ";
-    }
-    cout << endl;
-
-    A.addEnd(11); A.addFront(1); A.addFront(2); A.addFront(3);
-    cout << "capacity is " << A.capacity() << endl;
-    // A => "3 2 1 0 1 2 3 4 5 6 7 8 9 10 15 19 11"	  capacity => 32
-    A.delFront(); A.delFront();
-    // A => "1 0 1 2 3 4 5 6 7 8 9 10 15 19 11"	  capacity => 32
-
-    foo(A);
-    for (int i=0; i< A.length();i++) cout << A[i] << " ";  cout << endl;
-    // A => "1 0 1 2 3 4 5 6 7 8 9 10 15 19 11"
-    for (int i=0; i< B.length();i++) cout << B[i] << " ";  cout << endl;
-    // B => "0 1 2 3 4 5 6 7 8 9"
+    cout << "A: ";
+    for (int i = 0; i < A.length(); i++) cout << A[i] << " "; cout << endl;
 
     return 0;
 }

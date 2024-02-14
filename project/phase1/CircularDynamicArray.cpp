@@ -129,11 +129,6 @@ void CircularDynamicArray<elmtype>::addEnd(elmtype v) {
     // increases the size of the array by 1 and stores v at the end of the array.
     // Should double the capacity when the new element doesn't fit.
 
-    // adding 'v' to the end of the array
-    int back = (front + size) % capacitySize; // wrap around for addEnd
-    array[back] = v;
-    size++;
-
     // if full
     if (size == capacitySize)
     {
@@ -149,8 +144,13 @@ void CircularDynamicArray<elmtype>::addEnd(elmtype v) {
         capacitySize *= 2;
         front = 0;
     }
-    std::cout << "CDA array (end): ";
-    for (int i = 0; i < size; i++) std::cout << array[i] << " "; std::cout << std::endl;
+
+    // adding 'v' to the end of the array
+    int back = (front + size) % capacitySize; // wrap around for addEnd
+    array[back] = v;
+    size++;
+    // std::cout << "CDA array (end): ";
+    // for (int i = 0; i < size; i++) std::cout << array[i] << " "; std::cout << std::endl;
 }
 
 template <typename elmtype>
@@ -159,9 +159,7 @@ void CircularDynamicArray<elmtype>::addFront(elmtype v)
     // increases the size of the array by 1 and stores v at the beginning of the array.
     // Should double the capacity when the new element doesn't fit.
     // The new element should be the item returned at index 0.
-    front = (front + capacitySize - 1) % capacitySize;
-    array[front] = v;
-    size++;
+
     // maybe there is something wrong here???
     if (size == capacitySize)
     {
@@ -177,18 +175,24 @@ void CircularDynamicArray<elmtype>::addFront(elmtype v)
         capacitySize *= 2;
         front = 0;
     }
-    std::cout << "CDA array (front): ";
-    for (int i = 0; i < size; i++) std::cout << array[i] << " "; std::cout << std::endl;
+
+    front = (front + capacitySize - 1) % capacitySize;
+    array[front] = v;
+    size++;
+    // std::cout << "CDA array (front): ";
+    // for (int i = 0; i < size; i++) std::cout << array[i] << " "; std::cout << std::endl;
 }
 
 template <typename elmtype>
 void CircularDynamicArray<elmtype>::delEnd() {
     // reduces the size of the array by 1 at the end.
     // Should shrink the capacity when only 25% of the array is in use after the delete.
-    size--;
 
     if (size == (capacitySize / 4))
     {
+        // prevent deleting when size is 0
+        if (size == 0) return;
+
         // allocating new memory and copying elements
         elmtype* temp = new elmtype[capacitySize / 2];
         for (int i = 0; i < size; i++)
@@ -201,6 +205,9 @@ void CircularDynamicArray<elmtype>::delEnd() {
         capacitySize /= 2;
         front = 0;
     }
+
+    // int back = (front + size - 1) % capacitySize;
+    size--;
 }
 
 template <typename elmtype>
@@ -208,11 +215,11 @@ void CircularDynamicArray<elmtype>::delFront() {
     // reduces the size of the array by 1 at the beginning of the array.
     // Should shrink the capacity when only 25% of the array is in use after the delete.
 
-    front = (front + 1) % capacitySize; // moves front to next element
-    size--;
-
     if (size == (capacitySize / 4))
     {
+        // prevent deleting when size is 0
+        if (size == 0) return;
+
         // allocating new memory and copying elements
         elmtype* temp = new elmtype[capacitySize / 2];
         for (int i = 0; i < size; i++)
@@ -225,6 +232,11 @@ void CircularDynamicArray<elmtype>::delFront() {
         capacitySize /= 2;
         front = 0;
     }
+
+    front = (front + 1) % capacitySize; // moves front to next element
+    size--;
+    // std::cout << "CDA array (delFront): ";
+    // for (int i = 0; i < size; i++) std::cout << array[i] << " "; std::cout << std::endl;
 }
 
 template <typename elmtype>
@@ -246,8 +258,9 @@ void CircularDynamicArray<elmtype>::clear() {
     // Frees any space currently used and starts over with an array of capacity 2 and size 0
 
     delete[] array;
-    array = new elmtype[capacitySize = 2];
     size = front = 0;
+    capacitySize = 2;
+    array = new elmtype[capacitySize];
 }
 
 template<typename elmtype>
@@ -305,7 +318,7 @@ elmtype CircularDynamicArray<elmtype>::QSelection(int k) {
     int left = 0;
     // should be the back;
     // int right = (front + size - 1) % size;
-    int right = size - 2;
+    int right = size - 1;
 
     return kthSmallest(left, right, k);
 }
@@ -389,6 +402,7 @@ void CircularDynamicArray<elmtype>::sort() {
     // Sorts the values in the array using a comparison based O(N lg N) algorithm.
     // The sort must be stable.
 
+    front = 0;
     // trying merge sort instead
     mergeSort(front, (front + size - 1) % capacitySize);
     // std::cout << "CDA array: ";
@@ -415,7 +429,6 @@ int CircularDynamicArray<elmtype>::binSearch(elmtype e) {
     int left = 0;
     int right = size - 1;
 
-    // TODO: adjust for wrap around
     while (left <= right)
     {
         int mid = (left + right) / 2;
