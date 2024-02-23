@@ -51,31 +51,31 @@ build cmake_object_order_depends_target_CS_201: phony || CMakeFiles/CS_201.dir
 
 build CMakeFiles/CS_201.dir/project/phase1/main.cpp.o: CXX_COMPILER__CS_201_unscanned_Debug /cygdrive/c/Users/Donald/CLionProjects/CS-201/project/phase1/main.cpp || cmake_object_order_depends_target_CS_201
   DEP_FILE = CMakeFiles/CS_201.dir/project/phase1/main.cpp.o.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/CS_201.dir
   OBJECT_FILE_DIR = CMakeFiles/CS_201.dir/project/phase1
 
 build CMakeFiles/CS_201.dir/project/phase1/CircularDynamicArray.cpp.o: CXX_COMPILER__CS_201_unscanned_Debug /cygdrive/c/Users/Donald/CLionProjects/CS-201/project/phase1/CircularDynamicArray.cpp || cmake_object_order_depends_target_CS_201
   DEP_FILE = CMakeFiles/CS_201.dir/project/phase1/CircularDynamicArray.cpp.o.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/CS_201.dir
   OBJECT_FILE_DIR = CMakeFiles/CS_201.dir/project/phase1
 
 build CMakeFiles/CS_201.dir/labs/main.cpp.o: CXX_COMPILER__CS_201_unscanned_Debug /cygdrive/c/Users/Donald/CLionProjects/CS-201/labs/main.cpp || cmake_object_order_depends_target_CS_201
   DEP_FILE = CMakeFiles/CS_201.dir/labs/main.cpp.o.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/CS_201.dir
   OBJECT_FILE_DIR = CMakeFiles/CS_201.dir/labs
 
 build CMakeFiles/CS_201.dir/labs/queueu.cpp.o: CXX_COMPILER__CS_201_unscanned_Debug /cygdrive/c/Users/Donald/CLionProjects/CS-201/labs/queueu.cpp || cmake_object_order_depends_target_CS_201
   DEP_FILE = CMakeFiles/CS_201.dir/labs/queueu.cpp.o.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/CS_201.dir
   OBJECT_FILE_DIR = CMakeFiles/CS_201.dir/labs
 
 build CMakeFiles/CS_201.dir/project/phase1/Phase1Main_S24.cpp.o: CXX_COMPILER__CS_201_unscanned_Debug /cygdrive/c/Users/Donald/CLionProjects/CS-201/project/phase1/Phase1Main_S24.cpp || cmake_object_order_depends_target_CS_201
   DEP_FILE = CMakeFiles/CS_201.dir/project/phase1/Phase1Main_S24.cpp.o.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/CS_201.dir
   OBJECT_FILE_DIR = CMakeFiles/CS_201.dir/project/phase1
 
