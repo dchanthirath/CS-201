@@ -8,4 +8,9 @@ add_executable(CS_201 project/phase1/main.cpp
         labs/main.cpp
         labs/queueu.cpp
         project/phase1/Phase1Main_S24.cpp
+        project/phase2/main.cpp
+        project/phase2/two4Tree.cpp
+        project/phase1/Phase1Main.cpp
+        project/phase1/Phase1Main_Test.cpp
+        main.cpp
 )

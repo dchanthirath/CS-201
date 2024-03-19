@@ -20,17 +20,35 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80ff20b4-dc4b-4162-99b8-309b94c3ef3a" name="Changes" comment="Updated merge sort to set front to 0">
+    <list default="true" id="80ff20b4-dc4b-4162-99b8-309b94c3ef3a" name="Changes" comment="clion updates">
+      <change afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.vscode/c_cpp_properties.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/phase1/Phase1.exe.stackdump" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/phase1/Phase1Main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/phase1/Phase1Main_Test.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/phase1/test.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/phase2/Phase2Main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/phase2/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/phase2/makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/phase2/two4Tree.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-d9df006835315e94cc6a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2024-02-07T21-29-00-0899.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-CS_201-Debug-2f86f86338fc03d074eb.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/a.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-a26c6663c0747e212543.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2024-02-17T20-33-54-0348.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-CS_201-Debug-f7edaebd6b7969a489f8.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/phase1/CircularDynamicArray.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase1/CircularDynamicArray.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/phase1/Phase1.exe" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase1/Phase1.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/phase1/Phase1Main_S24.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase1/Phase1Main_S24.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/phase1/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase1/a.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/phase1/a.exe.stackdump" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase1/a.exe.stackdump" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/phase1/makefile" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase1/makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/phase1/phase1.zip" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase1/phase1.zip" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,20 +76,27 @@
     &quot;assignee&quot;: &quot;dchanthirath&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="66e8d2e6-7aba-48b3-b897-5be210072ebb" />
-        <option name="url" value="https://github.com/dchanthirath/CS-201" />
-      </UrlAndAccount>
-    </option>
-  </component>
+  <component name="GitHubPullRequestState">{
+  &quot;prStates&quot;: []
+}</component>
+  <component name="GitLabMergeRequestsSettings">{}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/dchanthirath/CS-201&quot;,
+    &quot;accountId&quot;: &quot;66e8d2e6-7aba-48b3-b897-5be210072ebb&quot;
+  }
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/labs/Queue.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/labs/main.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/labs/queueu.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/main.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/project/phase1/CircularDynamicArray.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/phase1/Phase1Main.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/phase1/Phase1Main_Test.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/project/phase1/main.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/phase1/test.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/phase2/Phase2Main.cpp" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -111,10 +136,12 @@
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Donald/git/main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Donald/CLionProjects/CS-201/project/phase2&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,
@@ -123,10 +150,13 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Donald\CLionProjects\CS-201\project\phase2" />
       <recent name="C:\Users\Donald\CLionProjects\CS-201\labs\lab3" />
       <recent name="C:\Users\Donald\CLionProjects\CS-201\project\phase1" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Donald\CLionProjects\CS-201\project\phase1" />
+      <recent name="C:\Users\Donald\CLionProjects\CS-201\project\phase2" />
       <recent name="C:\Users\Donald\CLionProjects\CS-201\labs" />
       <recent name="C:\Users\Donald\CLionProjects\CS-201\labs\cmake-build-debug" />
       <recent name="C:\Users\Donald\CLionProjects\CS-201" />
@@ -137,6 +167,11 @@
       <method v="2" />
     </configuration>
     <configuration name="CS_201" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CS_201" TARGET_NAME="CS_201" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CS_201" RUN_TARGET_NAME="CS_201">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -195,7 +230,15 @@
       <workItem from="1708103488410" duration="119000" />
       <workItem from="1708105742459" duration="6000" />
       <workItem from="1708202033099" duration="657000" />
-      <workItem from="1708523617127" duration="845000" />
+      <workItem from="1708523617127" duration="1653000" />
+      <workItem from="1708841788101" duration="7000" />
+      <workItem from="1709561706852" duration="3440000" />
+      <workItem from="1709730319740" duration="3189000" />
+      <workItem from="1710767039747" duration="1089000" />
+      <workItem from="1710771957547" duration="720000" />
+      <workItem from="1710794111302" duration="1312000" />
+      <workItem from="1710795444361" duration="3230000" />
+      <workItem from="1710823071887" duration="5408000" />
     </task>
     <task id="LOCAL-00001" summary="finally added lab3 and replaced the make file with cmakelists">
       <option name="closed" value="true" />
@@ -501,7 +544,23 @@
       <option name="project" value="LOCAL" />
       <updated>1707932102442</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="created helper functions sizeUp and sizeDown to reduce code length">
+      <option name="closed" value="true" />
+      <created>1708713347941</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1708713347941</updated>
+    </task>
+    <task id="LOCAL-00040" summary="clion updates">
+      <option name="closed" value="true" />
+      <created>1708713364355</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1708713364355</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -514,8 +573,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="unversioned files from clion cmake" />
-    <MESSAGE value="added more description for QSelect" />
     <MESSAGE value="unversioned file from clion" />
     <MESSAGE value="fixed addFront and delEnd" />
     <MESSAGE value="fixed delFront, delEnd, addEnd" />
@@ -539,10 +596,19 @@
     <MESSAGE value="zipped CircularDynamicArray.cpp and makefile" />
     <MESSAGE value="added debug lines" />
     <MESSAGE value="Updated merge sort to set front to 0" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated merge sort to set front to 0" />
+    <MESSAGE value="created helper functions sizeUp and sizeDown to reduce code length" />
+    <MESSAGE value="clion updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="clion updates" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/project/phase2/main.cpp</url>
+          <line>3</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">

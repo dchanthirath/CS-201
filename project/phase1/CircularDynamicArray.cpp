@@ -24,8 +24,8 @@ public:
     int capacity() const;
     void clear();
 
-    elmtype QSelection(int k);
-    void sort();
+    elmtype QSelect(int k);
+    void Sort();
 
     int linearSearch(elmtype e);
     int binSearch(elmtype e);
@@ -41,6 +41,9 @@ private:
 
     int partition(int l, int r);
     int kthSmallest(int l, int r, int k);
+    // int kthSmallest(int *A, int pivot, int k);
+
+    void quickSort(int low, int high);
 
     void merge(int left, int mid, int right);
     void mergeSort(int begin, int end);
@@ -155,7 +158,7 @@ void CircularDynamicArray<elmtype>::addEnd(elmtype v) {
     array[back] = v;
     size++;
     // std::cout << "CDA array (end): ";
-    // for (int i = 0; i < size; i++) std::cout << array[i] << " "; std::cout << std::endl;
+    // for (int i = 0; i < capacitySize; i++) std::cout << array[i] << " "; std::cout << std::endl;
 }
 
 template <typename elmtype>
@@ -247,17 +250,27 @@ void CircularDynamicArray<elmtype>::clear()
 template<typename elmtype>
 int CircularDynamicArray<elmtype>::partition(int l, int r)
 {
-    elmtype x = array[r];
+    elmtype x = array[r], temp;
     int i = l;
     for (int j = l; j <= r - 1; j++) {
-        if (array[j] <= x) {
+        if (array[j] <= x || (array[j] == x && j < r)) { // after ||, attempt to make stable quick sort
             std::swap(array[i], array[j]);
+            // temp = array[i];
+            // array[i] = array[j];
+            // array[j] = temp;
             i++;
         }
     }
     std::swap(array[i], array[r]);
+    // temp = array[i];
+    // array[i] = array[r];
+    // array[r] = temp;
+
+    // std::cout << i << std::endl;
+
     return i;
 }
+
 
 template <typename elmtype>
 int CircularDynamicArray<elmtype>::kthSmallest(int l, int r, int k)
@@ -289,20 +302,91 @@ int CircularDynamicArray<elmtype>::kthSmallest(int l, int r, int k)
     return size;
 }
 
+/*
 template <typename elmtype>
-elmtype CircularDynamicArray<elmtype>::QSelection(int k) {
+int CircularDynamicArray<elmtype>::kthSmallest(int *A, int pivot, int k)
+{
+    // three empty lists L, E, G
+    elmtype *L, *E, *G;
+    int count1 = 0;
+    int count2 = 0;
+    int count3 = 0;
+    
+    // for each x in A
+    for (int i = 0; i < size; i++) {
+        // if (x<pivot) add x to L;
+        if (array[i] < pivot) {
+            L[count1] = array[i];
+            count1++;
+        // else if (x==pivot) add x to E;
+        } else if (array[i] == pivot) {
+            E[count2] = array[i];
+            count2++;
+        // else  (x>pivot)  add x to G;
+        } else {
+            G[count3] = array[i];
+            count3++;
+        }
+    }
+    // if (k <= L.size)
+    if (k < (sizeof(L)/sizeof(int))) {
+        // return Select (L, k);
+        return kthSmallest(L, pivot, k);
+    // else if (k <= L.size + E.size)
+    } else if (k <= ((sizeof(L)/sizeof(int)) + (sizeof(E)/sizeof(int)))) {
+        // return pivot;
+        return pivot;
+    // else return Select (G, k - L.size - E.size);
+    } else {
+        return kthSmallest(G, pivot, k - (sizeof(L)/sizeof(int)) - (sizeof(E)/sizeof(int)));
+    }
+
+} */
+
+/*
+template <typename elmtype>
+elmtype CircularDynamicArray<elmtype>::QSelect(int k) {
     // returns the kth smallest element in the array using the quickselect algorithm.
     // This method should choose a pivot element at random.
 
+    // std::cout << "CDA: ";
+    // for (int i = 0; i < capacitySize; i++) {
+    //     std::cout << array[i] << " ";
+    // }
+    // std::cout << std::endl;
     // should be the front;
-    // int left = front;
-    int left = 0;
+    int left = front;
     // should be the back;
-    // int right = (front + size - 1) % size;
-    int right = size - 1;
+    int right = (front + size) % capacitySize;
+    // std::cout << "size is " << left << std::endl;
+    // pivot
+    int pivot = array[(0 + size) / 2];
 
-    return kthSmallest(left, right, k);
+    return kthSmallest(array, pivot, k);
 }
+*/
+
+
+template <typename elmtype>
+elmtype CircularDynamicArray<elmtype>::QSelect(int k) {
+    // returns the kth smallest element in the array using the quickselect algorithm.
+    // This method should choose a pivot element at random.
+
+    // std::cout << "CDA: ";
+    // for (int i = 0; i < capacitySize; i++) {
+    //     std::cout << array[i] << " ";
+    // }
+    // std::cout << std::endl;
+    // should be the front;
+    int left = front;
+    // should be the back;
+    int right = (front + size) % capacitySize;
+    // std::cout << "size is " << left << std::endl;
+
+
+    return kthSmallest(front, size - 1, k);
+}
+
 
 template <typename elmtype>
 void CircularDynamicArray<elmtype>::merge(int left, int mid, int right)
@@ -378,8 +462,27 @@ void CircularDynamicArray<elmtype>::mergeSort(int begin, int end)
     }
 }
 
+template<typename elmtype>
+void CircularDynamicArray<elmtype>::quickSort(int low, int high)
+{
+    // when low is less than high
+    if(low<high)
+    {
+        // pi is the partition return index of pivot
+
+        int pi = partition(low,high);
+        // std::cout << pi << std::endl;
+
+        //Recursion Call
+        //smaller element than pivot goes left and
+        //higher element goes right
+        quickSort(low,pi-1);
+        quickSort(pi+1,high);
+    }
+}
+
 template <typename elmtype>
-void CircularDynamicArray<elmtype>::sort() {
+void CircularDynamicArray<elmtype>::Sort() {
     // Sorts the values in the array using a comparison based O(N lg N) algorithm.
     // The sort must be stable.
 
