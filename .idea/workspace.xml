@@ -20,35 +20,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80ff20b4-dc4b-4162-99b8-309b94c3ef3a" name="Changes" comment="clion updates">
-      <change afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vscode/c_cpp_properties.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/phase1/Phase1.exe.stackdump" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/phase1/Phase1Main.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/phase1/Phase1Main_Test.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/phase1/test.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/phase2/Phase2Main.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/phase2/main.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/phase2/makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/phase2/two4Tree.cpp" afterDir="false" />
+    <list default="true" id="80ff20b4-dc4b-4162-99b8-309b94c3ef3a" name="Changes" comment="main from class for Phase2Main.cpp">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/a.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-a26c6663c0747e212543.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2024-02-17T20-33-54-0348.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-CS_201-Debug-f7edaebd6b7969a489f8.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/phase1/CircularDynamicArray.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase1/CircularDynamicArray.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/phase1/Phase1.exe" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase1/Phase1.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/phase1/Phase1Main_S24.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase1/Phase1Main_S24.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/phase1/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase1/a.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/phase1/a.exe.stackdump" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase1/a.exe.stackdump" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/phase1/makefile" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase1/makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/phase1/phase1.zip" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase1/phase1.zip" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,14 +145,9 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="CMake Application.CS_201" />
       <item itemvalue="CMake Debug.CS_201" />
+      <item itemvalue="CMake Application.CS_201" />
     </list>
     <recent_temporary>
       <list>
@@ -238,7 +207,8 @@
       <workItem from="1710771957547" duration="720000" />
       <workItem from="1710794111302" duration="1312000" />
       <workItem from="1710795444361" duration="3230000" />
-      <workItem from="1710823071887" duration="5408000" />
+      <workItem from="1710823071887" duration="6453000" />
+      <workItem from="1711056147795" duration="1000" />
     </task>
     <task id="LOCAL-00001" summary="finally added lab3 and replaced the make file with cmakelists">
       <option name="closed" value="true" />
@@ -560,7 +530,31 @@
       <option name="project" value="LOCAL" />
       <updated>1708713364355</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="added the definitions for methods for class">
+      <option name="closed" value="true" />
+      <created>1710881950783</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1710881950783</updated>
+    </task>
+    <task id="LOCAL-00042" summary="thing">
+      <option name="closed" value="true" />
+      <created>1710881991930</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1710881991930</updated>
+    </task>
+    <task id="LOCAL-00043" summary="main from class for Phase2Main.cpp">
+      <option name="closed" value="true" />
+      <created>1710882013076</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1710882013076</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -573,9 +567,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="unversioned file from clion" />
-    <MESSAGE value="fixed addFront and delEnd" />
-    <MESSAGE value="fixed delFront, delEnd, addEnd" />
     <MESSAGE value="fixed addFront" />
     <MESSAGE value="Add and delete functions are fully working&#10;made progress on quick select algorithm" />
     <MESSAGE value="whatever that clion wanted to add" />
@@ -598,7 +589,10 @@
     <MESSAGE value="Updated merge sort to set front to 0" />
     <MESSAGE value="created helper functions sizeUp and sizeDown to reduce code length" />
     <MESSAGE value="clion updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="clion updates" />
+    <MESSAGE value="added the definitions for methods for class" />
+    <MESSAGE value="thing" />
+    <MESSAGE value="main from class for Phase2Main.cpp" />
+    <option name="LAST_COMMIT_MESSAGE" value="main from class for Phase2Main.cpp" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
