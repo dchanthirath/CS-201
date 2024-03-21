@@ -1,6 +1,17 @@
 //
 // Created by Donald on 3/4/2024.
 //
+#include <iostream>
+#include "CircularDynamicArray.cpp"
+
+class Node {
+public:
+    int data;
+    Node *left;
+    Node *right;
+private:
+};
+
 template <typename keytype, typename valuetype>
 class two4Tree {
 public:
@@ -29,16 +40,18 @@ public:
 
 private:
     int treeSize;
+    int *keyArray, *valArray;
 
     // helper functions
 
-}
+};
 
 template <typename keytype, typename valuetype>
 two4Tree<keytype, valuetype>::two4Tree()
 {
     // Default Constructor.
     // The tree should be empty
+    keyArray = *
     treeSize = 0;
 
 }
@@ -46,14 +59,18 @@ two4Tree<keytype, valuetype>::two4Tree()
 template <typename keytype, typename valuetype>
 two4Tree<keytype, valuetype>::two4Tree(keytype k[], valuetype V[], int s)
 {
-    treeSize = 0;
+    // For this constructor the tree should be built
+    // using the arrays K and V containing s items of
+    // keytype and valuetype. The tree should be
+    // built using repeated insertion.
+    treeSize = s;
 
 }
 
 template <typename keytype, typename valuetype>
 two4Tree<keytype, valuetype>::~two4Tree()
 {
-
+    
 }
 
 template <typename keytype, typename valuetype>
@@ -63,7 +80,7 @@ two4Tree<keytype, valuetype>::two4Tree(const two4Tree &old)
 }
 
 template <typename keytype, typename valuetype>
-two4Tree& two4Tree<keytype, valuetype>::operator=(const two4Tree& rhs)
+two4Tree<keytype, valuetype>& two4Tree<keytype, valuetype>::operator=(const two4Tree& rhs)
 {
 
 }

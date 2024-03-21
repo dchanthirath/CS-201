@@ -20,9 +20,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80ff20b4-dc4b-4162-99b8-309b94c3ef3a" name="Changes" comment="main from class for Phase2Main.cpp">
+    <list default="true" id="80ff20b4-dc4b-4162-99b8-309b94c3ef3a" name="Changes" comment="clion files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/a.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,8 +146,8 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="CMake Debug.CS_201" />
       <item itemvalue="CMake Application.CS_201" />
+      <item itemvalue="CMake Debug.CS_201" />
     </list>
     <recent_temporary>
       <list>
@@ -208,7 +208,7 @@
       <workItem from="1710794111302" duration="1312000" />
       <workItem from="1710795444361" duration="3230000" />
       <workItem from="1710823071887" duration="6453000" />
-      <workItem from="1711056147795" duration="1000" />
+      <workItem from="1711056147795" duration="639000" />
     </task>
     <task id="LOCAL-00001" summary="finally added lab3 and replaced the make file with cmakelists">
       <option name="closed" value="true" />
@@ -554,7 +554,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710882013076</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="clion files">
+      <option name="closed" value="true" />
+      <created>1711056168704</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1711056168704</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -567,7 +575,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fixed addFront" />
     <MESSAGE value="Add and delete functions are fully working&#10;made progress on quick select algorithm" />
     <MESSAGE value="whatever that clion wanted to add" />
     <MESSAGE value="Fixed the wrap around for heap sort and qselect&#10;&#10;also fixed error with assignment operator" />
@@ -592,7 +599,8 @@
     <MESSAGE value="added the definitions for methods for class" />
     <MESSAGE value="thing" />
     <MESSAGE value="main from class for Phase2Main.cpp" />
-    <option name="LAST_COMMIT_MESSAGE" value="main from class for Phase2Main.cpp" />
+    <MESSAGE value="clion files" />
+    <option name="LAST_COMMIT_MESSAGE" value="clion files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
