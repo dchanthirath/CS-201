@@ -7,7 +7,7 @@ template <typename elmtype>
 class CircularDynamicArray {
 public:
     CircularDynamicArray();
-    explicit CircularDynamicArray(int s);
+    CircularDynamicArray(int s);
     // rule of three
     ~CircularDynamicArray(); // destructor
     CircularDynamicArray(const CircularDynamicArray &old); // copy constructor

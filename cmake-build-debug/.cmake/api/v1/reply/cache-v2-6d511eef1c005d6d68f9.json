@@ -115,7 +115,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/cygdrive/c/Users/Donald/AppData/Local/JetBrains/CLionNova2024.1/cygwin_cmake/bin/cmake.exe"
+			"value" : "/cygdrive/c/Users/Donald/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/bin/cmake.exe"
 		},
 		{
 			"name" : "CMAKE_CPACK_COMMAND",
@@ -127,7 +127,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/cygdrive/c/Users/Donald/AppData/Local/JetBrains/CLionNova2024.1/cygwin_cmake/bin/cpack.exe"
+			"value" : "/cygdrive/c/Users/Donald/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/bin/cpack.exe"
 		},
 		{
 			"name" : "CMAKE_CTEST_COMMAND",
@@ -139,7 +139,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/cygdrive/c/Users/Donald/AppData/Local/JetBrains/CLionNova2024.1/cygwin_cmake/bin/ctest.exe"
+			"value" : "/cygdrive/c/Users/Donald/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/bin/ctest.exe"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER",
@@ -643,7 +643,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/cygdrive/c/Users/Donald/AppData/Local/Programs/CLion Nova/bin/ninja/cygwin/x64/ninja.exe"
+			"value" : "/cygdrive/c/Users/Donald/AppData/Local/Programs/CLion 2/bin/ninja/cygwin/x64/ninja.exe"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS",
@@ -983,7 +983,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/cygdrive/c/Users/Donald/AppData/Local/JetBrains/CLionNova2024.1/cygwin_cmake/share/cmake-3.28.1"
+			"value" : "/cygdrive/c/Users/Donald/AppData/Local/JetBrains/CLion2024.1/cygwin_cmake/share/cmake-3.28.1"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS",

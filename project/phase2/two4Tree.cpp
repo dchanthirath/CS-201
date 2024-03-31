@@ -4,19 +4,23 @@
 #include <iostream>
 #include "CircularDynamicArray.cpp"
 
-class Node {
-public:
-    int data;
-    Node *left;
-    Node *right;
-private:
+template <typename keytype, typename valuetype>
+struct Node {
+    keytype keys[3];
+    valuetype values[3];
+    Node *children[4];
+    int keyCount;
+    bool leaf;
+
 };
+
+Node* root;
 
 template <typename keytype, typename valuetype>
 class two4Tree {
 public:
     two4Tree();
-    explicit two4Tree(keytype k[], valuetype V[], int s);
+    two4Tree(keytype k[], valuetype V[], int s);
     // rule of three
     ~two4Tree(); // destructor
     two4Tree(const two4Tree &old); // copy constructor
