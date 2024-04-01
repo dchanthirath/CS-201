@@ -1,2 +1,2 @@
 all:
-	g++ Phase2Main.cpp two4Tree.cpp -o Phase2
+	g++ Phase2Main.cpp -std=c++11 -o Phase2
