@@ -3,10 +3,10 @@ using namespace std;
 #include "two4Tree.cpp"
 
 int main(){
-	string K[10] = {"A","B","C","D","E","F","G","H","I","K","L","M"};
-	int V[10] = {12,11,10,9,8,7,6,5,4,3,2,1};
+	string K[12] = {"A","B","C","D","E","F","G","H","I","K","L","M"};
+	float V[12] = {12,11,10,9,8,7,6,5,4,3,2,1};
 	
-	two4Tree<string,float> T1(K,V,12) T2;
+	two4Tree<string,float> T1(K,V,12), T2;
 	
 	for(int i=0; i<12; i++) T2.insert(K[i],V[i]);
 	// T1 and T2 should be the same trees
@@ -33,13 +33,16 @@ int main(){
 	//Should output 1
 	
 	T2.preorder();
-	//Should output "E\n B\n A\n C\n H K\n F G\n I\n L M\n"
+	//Should output "F\n B\n A\n C E\n H K\n G\n I\n L M\n"
 	
 	T2.inorder();
 	//Should output	A B C E F G H I K L M\n
 	
 	cout << T2.remove("J") << endl;
 	//Should output 0
+	
+	T2.preorder();
+	//Should output "F\n B\n A\n C E\n H L\n G\n I K\n M\n"    remove("J") modifies the tree
 	
 	cout <<T2.rank("G") << endl;
 	//Should output 6
@@ -48,10 +51,10 @@ int main(){
 	T2.insert("H",5.2);
 	T2.insert("H",5.3);
 
-	cout << T1.rank("I") << endl;
+	cout << T2.rank("I") << endl;
 	//Should output 11
 
-	cout << T2.remove("H"); << endl;
+	cout << T2.remove("H") << endl;
 	//Should output 1
 	
 	cout << *(T2.search("H")) << endl;
@@ -60,11 +63,17 @@ int main(){
 	cout << T2.duplicates("H") << endl;
 	//Should output 3
 	
+	T2.inorder();
+	//Should output	A B C E F G H H H I K L M\n
+
+	T2.preorder();
+	//Should output "F\n B\n A\n C E\n H L\n G\n I K\n M\n"  
+
 	cout << T2.rank("H") << endl;
 	//Should output 7
 	
 	cout << T2.size() << endl;
-	//Should output 14
+	//Should output 13
 	
     two4Tree<int,int> X;
 	for (int i=1;i<1001000;i++) X.insert(i,i);
