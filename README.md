@@ -1,2 +1,4 @@
 # CS-201
-This repository is my history of projects and assignments for this class
+Repository for CS 201 - Data Structures and Algorithms at UA.
+
+This contains labs and projects.
