@@ -187,11 +187,11 @@ void two4Tree<keytype, valuetype>::split(Node<keytype, valuetype> *node, Node<ke
         parent->keys[i] = node->keys[1];
         parent->values[i] = node->values[1];
         parent->children[i + 1] = newNode;
-        parent->keyCount++;
+        ++parent->keyCount;
 
         // If the parent node is full, split it
         if (parent->keyCount == 3) {
-            split(parent, parent->parent);
+            split(parent, parent->children);
         }
     }
 }
@@ -207,8 +207,7 @@ void two4Tree<keytype, valuetype>::insert(keytype k, valuetype v)
     // and add the new value v to the end of a circular
     // dynamic array of values associated with that key.
 
-    // when the tree is empty
-    if (root == nullptr)
+    if (root == nullptr) // when the tree is empty
     {
         root = new Node<keytype, valuetype>;
         root->keys[0] = k;
@@ -216,7 +215,7 @@ void two4Tree<keytype, valuetype>::insert(keytype k, valuetype v)
         root->keyCount = 1;
         root->leaf = true;
     }
-    else // when tree is not empty
+    else // when the tree is not empty
     {
         Node<keytype, valuetype> *node = root;
         Node<keytype, valuetype> *parent = nullptr;
@@ -224,8 +223,7 @@ void two4Tree<keytype, valuetype>::insert(keytype k, valuetype v)
         while (node != nullptr) {
             parent = node;
 
-            // find the leaf node where key should be inserted
-            for (int i = 0; i < node->keyCount; i++)
+            for (int i = 0; i < node->keyCount; i++) //  finding the correct leaf node
             {
                 if (k < node->keys[i])
                 {
@@ -241,31 +239,30 @@ void two4Tree<keytype, valuetype>::insert(keytype k, valuetype v)
             }
         }
 
-        // if leaf node is not full
-        // insert key and value into correct position
-        if (parent->keyCount < 3) {
+        if (parent->keyCount < 3) { // checking if the parent node is not full
             int i;
             for (i = 0; parent->keyCount; i++)
             {
                 if (k < parent->keys[i]) break;
             }
 
-            // shifts keys and children to the right
-            for (int j = parent->keyCount; j > i; j--)
+            for (int j = parent->keyCount; j > i; --j)
             {
                 parent->keys[j] = parent->keys[j - 1];
                 parent->children[j + 1] = parent->children[j];
             }
 
-            // insert new key and child
+            // insert the key and value
             parent->keys[i] = k;
             parent->values.addEnd(v);
             parent->children[i + 1] = nullptr;
-            parent->keyCount++;
+            ++parent->keyCount;
+
+            std::cout << std::endl;
         }
-        else // split
+        else // when the parent node is full
         {
-            split(parent, parent->parent);
+            split(parent, parent->children);
             insert(k, v);
         }
     }
