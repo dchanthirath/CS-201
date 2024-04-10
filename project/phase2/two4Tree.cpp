@@ -2,7 +2,207 @@
 // Created by Donald on 3/4/2024.
 //
 #include <iostream>
-#include "CircularDynamicArray.cpp"
+// #include "CircularDynamicArray.cpp"
+
+template <typename elmtype>
+class CircularDynamicArray {
+public:
+    CircularDynamicArray();
+    explicit CircularDynamicArray(int s);
+    // rule of three
+    ~CircularDynamicArray(); // destructor
+    CircularDynamicArray(const CircularDynamicArray &old); // copy constructor
+    CircularDynamicArray& operator=(const CircularDynamicArray& rhs); // copy assignment
+
+    elmtype& operator[](int i);
+
+    void addEnd(elmtype v);
+    void addFront(elmtype v);
+    void delEnd();
+    void delFront();
+
+    int length() const;
+    int capacity() const;
+    void clear();
+
+    elmtype QSelect(int k);
+    void Sort();
+
+    int linearSearch(elmtype e);
+    int binSearch(elmtype e);
+
+private:
+    int size, capacitySize, front;
+    elmtype *array;
+    elmtype error;
+
+    // helper functions
+    void sizeUp();
+    void sizeDown();
+
+    int partition(int l, int r);
+    int kthSmallest(int l, int r, int k);
+    // int kthSmallest(int *A, int pivot, int k);
+
+    void quickSort(int low, int high);
+
+    void merge(int left, int mid, int right);
+    void mergeSort(int begin, int end);
+};
+
+template <typename elmtype>
+CircularDynamicArray<elmtype>::CircularDynamicArray() {
+    // Default Constructor.
+    // The array should be of capacity 2 and size 0
+    array = new elmtype[capacitySize = 2];
+    size = front = 0;
+}
+
+template <typename elmtype>
+CircularDynamicArray<elmtype>::CircularDynamicArray(int s) {
+    // For this constructor the array should be of capacity and size s
+    array = new elmtype[capacitySize = s];
+    size = s;
+    front = 0;
+}
+
+template <typename elmtype>
+CircularDynamicArray<elmtype>::~CircularDynamicArray() {
+    // destructor for the class
+    delete[] array;
+}
+
+template <typename elmtype>
+CircularDynamicArray<elmtype>::CircularDynamicArray(const CircularDynamicArray& old)
+{
+    // copy constructor
+    // makes a deep copy of the CircularDynamicArray ref
+    // named old into current object
+
+    // allocate new memory and copy elements
+    array = new elmtype[old.capacitySize];
+    for (int i = 0; i < old.size; i++)
+        array[i] = old.array[i];
+
+    // reallocating memory
+    capacitySize = old.capacitySize;
+    size = old.size;
+    front = old.front;
+}
+
+template <typename elmtype>
+CircularDynamicArray<elmtype>& CircularDynamicArray<elmtype>::operator=(const CircularDynamicArray& rhs)
+{
+    // copy assignment operator
+    if (this != &rhs)
+    {
+        // allocate new memory and copy elements
+        elmtype* newArray = new elmtype[rhs.capacitySize];
+        for (int i = 0; i < rhs.size; i++)
+            newArray[i] = rhs.array[i];
+
+        // deallocate old memory
+        delete[] array;
+
+        // allocate new memory
+        array = newArray;
+
+        capacitySize = rhs.capacitySize;
+        size = rhs.size;
+        front = rhs.front;
+    }
+
+    // by convention always return *this
+    return *this;
+}
+
+template <typename elmtype>
+elmtype& CircularDynamicArray<elmtype>::operator[](int i)
+{
+    // Traditional [] operator.
+    // Should print a message if i is out of bounds and
+    // return a reference to value of type elmtype stored in the class for this purpose
+    if (i < 0 || i >= size) {
+        std::cout << "i is out of bounds" << std::endl;
+        return error;
+    }
+
+    return array[(front + i) % capacitySize];
+}
+
+template <typename elmtype>
+void CircularDynamicArray<elmtype>::sizeUp()
+{
+    // allocate new memory and copying elements
+    elmtype* temp = new elmtype[capacitySize * 2];
+    for (int i = 0; i < size; i++) // assigning elements from beginning of temp
+        temp[i] = array[(front + i) % capacitySize];
+    // deallocating old array
+    delete[] array;
+    // allocating new memeory
+    array = temp;
+
+    capacitySize *= 2;
+    front = 0;
+}
+
+template <typename elmtype>
+void CircularDynamicArray<elmtype>::addEnd(elmtype v) {
+    // increases the size of the array by 1 and stores v at the end of the array.
+    // Should double the capacity when the new element doesn't fit.
+
+    // if full
+    if (size == capacitySize) sizeUp();
+
+    // adding 'v' to the end of the array
+    int back = (front + size) % capacitySize; // wrap around for addEnd
+    array[back] = v;
+    size++;
+    // std::cout << "CDA array (end): ";
+    // for (int i = 0; i < capacitySize; i++) std::cout << array[i] << " "; std::cout << std::endl;
+}
+
+template <typename elmtype>
+void CircularDynamicArray<elmtype>::clear()
+{
+    // Frees any space currently used and starts over with an array of capacity 2 and size 0
+
+    delete[] array;
+    size = front = 0;
+    capacitySize = 2;
+    array = new elmtype[capacitySize];
+}
+
+template <typename elmtype>
+void CircularDynamicArray<elmtype>::sizeDown()
+{
+    // prevent deleting when size is 0
+    if (size == 0) return;
+
+    // allocating new memory and copying elements
+    elmtype* temp = new elmtype[capacitySize / 2];
+    for (int i = 0; i < size; i++)
+        temp[i] = array[(front + i) % capacitySize];
+    // deallocating memory
+    delete[] array;
+    // reallocating memory
+    array = temp;
+
+    capacitySize /= 2;
+    front = 0;
+}
+
+
+template <typename elmtype>
+void CircularDynamicArray<elmtype>::delEnd() {
+    // reduces the size of the array by 1 at the end.
+    // Should shrink the capacity when only 25% of the array is in use after the delete.
+
+    if (size == (capacitySize / 4)) sizeDown();
+
+    // int back = (front + size - 1) % capacitySize;
+    size--;
+}
 
 template <typename keytype, typename valuetype>
 struct Node {
