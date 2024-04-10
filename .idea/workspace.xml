@@ -20,26 +20,45 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80ff20b4-dc4b-4162-99b8-309b94c3ef3a" name="Changes" comment="clions stuff">
-      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
+    <list default="true" id="80ff20b4-dc4b-4162-99b8-309b94c3ef3a" name="Changes" comment="updated insert (still doesn't work)">
+      <change afterPath="$PROJECT_DIR$/practice/fibonacci_heap.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/phase2/Phase2.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/phase2/Phase2.exe.stackdump" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/phase2/Phase2.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/phase2/a.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/phase2/a.exe.stackdump" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/phase2/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/phase3/BHeap.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/phase3/Phase3Main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/phase3/makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/a.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-c92faa7a59681073249d.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-e52ed6c7c5c36bc8ea63.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2024-03-31T02-44-11-0843.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-CS_201-Debug-5a2a1050ec3c21ed651f.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cache-v2-6d511eef1c005d6d68f9.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-8c84b5b5a528e999d596.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-2de6564c13bd962dd128.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2024-04-02T23-10-16-0394.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-CS_201-Debug-cdeac175c9cee543aaf9.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.28.1/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.28.1/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.28.1/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.28.1/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.28.1/CompilerIdC/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.28.1/CompilerIdC/a.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.28.1/CompilerIdCXX/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.28.1/CompilerIdCXX/a.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.28.1/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.28.1/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.28.1/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.28.1/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.28.1/CMakeRCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.28.1/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.28.1/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.28.1/CompilerIdC/a.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.28.1/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.28.1/CompilerIdCXX/a.exe" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/edit_cache.dir/utility.sh" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/edit_cache.dir/utility.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rebuild_cache.dir/utility.sh" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rebuild_cache.dir/utility.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/phase2/Phase2Main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase2/Phase2Main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/phase2/main.cpp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project/phase2/two4Tree.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase2/two4Tree.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +94,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/dchanthirath/CS-201&quot;,
-    &quot;accountId&quot;: &quot;168d8c7b-735d-40e0-824e-75e03950253d&quot;
+    &quot;accountId&quot;: &quot;314b9f1a-b448-454f-bc29-35478f0e38a6&quot;
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
@@ -147,11 +166,11 @@
       <recent name="C:\Users\Donald\CLionProjects\CS-201\project\phase1" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Donald\CLionProjects\CS-201\project\phase3" />
+      <recent name="C:\Users\Donald\CLionProjects\CS-201" />
       <recent name="C:\Users\Donald\CLionProjects\CS-201\project\phase2" />
       <recent name="C:\Users\Donald\CLionProjects\CS-201\project\phase1" />
       <recent name="C:\Users\Donald\CLionProjects\CS-201\labs" />
-      <recent name="C:\Users\Donald\CLionProjects\CS-201\labs\cmake-build-debug" />
-      <recent name="C:\Users\Donald\CLionProjects\CS-201" />
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.CS_201">
@@ -253,7 +272,9 @@
       <workItem from="1712077317095" duration="8000" />
       <workItem from="1712077336660" duration="4000" />
       <workItem from="1712077372207" duration="1704000" />
-      <workItem from="1712093712858" duration="9535000" />
+      <workItem from="1712093712858" duration="16733000" />
+      <workItem from="1712111223204" duration="8073000" />
+      <workItem from="1712753873598" duration="8795000" />
     </task>
     <task id="LOCAL-00001" summary="finally added lab3 and replaced the make file with cmakelists">
       <option name="closed" value="true" />
@@ -615,7 +636,39 @@
       <option name="project" value="LOCAL" />
       <updated>1711853248872</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="updated two4Tree.cpp with lots of stuff and replaced Phase2Main.cpp with the file from blackboard">
+      <option name="closed" value="true" />
+      <created>1712104203576</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1712104203576</updated>
+    </task>
+    <task id="LOCAL-00047" summary="clion stuff">
+      <option name="closed" value="true" />
+      <created>1712104268847</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1712104268847</updated>
+    </task>
+    <task id="LOCAL-00048" summary="updated README.md">
+      <option name="closed" value="true" />
+      <created>1712104629192</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1712104629192</updated>
+    </task>
+    <task id="LOCAL-00049" summary="updated insert (still doesn't work)">
+      <option name="closed" value="true" />
+      <created>1712113047811</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1712113047811</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -628,10 +681,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="whatever that clion wanted to add" />
-    <MESSAGE value="Fixed the wrap around for heap sort and qselect&#10;&#10;also fixed error with assignment operator" />
-    <MESSAGE value="fixed clear to use elmtype instead of int" />
-    <MESSAGE value="adjusted addEnd to do a wrap around for the array" />
     <MESSAGE value="fixed copy assignment operator to actually copy to new array" />
     <MESSAGE value="attemped to run cmake" />
     <MESSAGE value="attempting to fix sort" />
@@ -653,7 +702,11 @@
     <MESSAGE value="main from class for Phase2Main.cpp" />
     <MESSAGE value="clion files" />
     <MESSAGE value="clions stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="clions stuff" />
+    <MESSAGE value="updated two4Tree.cpp with lots of stuff and replaced Phase2Main.cpp with the file from blackboard" />
+    <MESSAGE value="clion stuff" />
+    <MESSAGE value="updated README.md" />
+    <MESSAGE value="updated insert (still doesn't work)" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated insert (still doesn't work)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -13,4 +13,9 @@ add_executable(CS_201 project/phase1/main.cpp
         project/phase1/Phase1Main_Test.cpp
         main.cpp
         project/phase2/Phase2Main.cpp
+        project/phase2/main.cpp
+        project/phase2/CircularDynamicArray.cpp
+        practice/fibonacci_heap.cpp
+        project/phase3/BHeap.cpp
+        project/phase3/Phase3Main.cpp
 )
