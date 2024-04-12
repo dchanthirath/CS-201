@@ -6,10 +6,9 @@
 template <typename keytype>
 struct Node {
     keytype key;
-    int degree;
-    bool mark;
+    int level;
     Node* parent;
-    Node* child; // the b0, whereas the parent would be b1
+    Node* child; // the b1, whereas the parent would be b0
     Node* left;
     Node* right;
 };
@@ -68,7 +67,8 @@ BHeap<keytype>::BHeap(keytype *k, int s)
     Node<keytype> *minimum = nullptr;
     Node<keytype> *rootList = nullptr;
 
-    for (int i = 0; i < s; i++) {
+    for (int i = 0; i < s; i++)
+    {
         insert(k[i]);
     }
     consolidate();
@@ -79,6 +79,15 @@ template<typename keytype>
 BHeap<keytype>::~BHeap()
 {
     // destructor for the class
+    Node<keytype>* current = rootList;
+    while (current != nullptr)
+    {
+        Node<keytype>* next = current->right;
+        delete current;
+        current = next;
+
+        if (current == rootList) break;
+    }
 
 }
 
@@ -87,6 +96,13 @@ BHeap<keytype>::BHeap(const BHeap &old)
 {
     // copy constructor
     // should create a deep copy of the old heap
+
+    rootList = nullptr;
+    minimum = nullptr;
+
+    if (old.rootList == nullptr) return;
+
+    // TODO: deep copy of old heap
 
 }
 
@@ -153,23 +169,26 @@ void BHeap<keytype>::insert(keytype k)
      */
     Node<keytype>* newNode = new Node<keytype>;
     newNode->key = k;
-    newNode->degree = 0;
-    newNode->mark = false;
-    newNode->parent = nullptr;
+    newNode->level = 0;
+    newNode->parent = newNode;
     newNode->child = nullptr;
     newNode->left = newNode;
     newNode->right = newNode;
 
-    if (rootList == nullptr) { // empty heap
+    if (rootList == nullptr) // empty heap
+    {
         rootList = newNode;
-    } else { // add new node to left of min root
+    }
+    else // add new node to left of min root
+    {
         newNode->left = minimum;
         newNode->right = minimum->left;
         minimum->left->right = newNode;
         rootList->left = newNode;
 
         // if new key is smaller than min, update min
-        if (k < minimum->key) {
+        if (k < minimum->key)
+        {
             minimum = newNode;
         }
     }
@@ -185,6 +204,17 @@ void BHeap<keytype>::merge(BHeap<keytype> &H2)
      * after min in H1, with min in H2 being the first root inserted
      */
 
+    Node<keytype>* root2 = H2.rootList;
+    if (rootList == nullptr)
+    {
+        rootList = root2;
+    }
+    else if (root2 != nullptr)
+    {
+        // TODO: merge
+    }
+
+    // TODO: update min
 }
 
 template<typename keytype>
