@@ -1,8 +1,16 @@
 # ninja log v5
-18	901	1707704677049318200	CMakeFiles/CS_201.dir/project/phase1/main.cpp.o	b9b49c6faf2e4c84
-37	822	1707704676965542400	CMakeFiles/CS_201.dir/project/phase1/CircularDynamicArray.cpp.o	48d22cc6708f3c8a
-68	886	1707704677043480500	CMakeFiles/CS_201.dir/labs/queueu.cpp.o	8798e9bd0abc464f
-12	1306	1707143338387369400	CMakeFiles/CS_201.dir/main.cpp.o	334a09d1a67623a3
-3	132	1712779998358431700	build.ninja	82f9d4c05d9c3d03
-11	602	1707704787820651300	CMakeFiles/CS_201.dir/labs/main.cpp.o	e6ab68ea6a18d0c9
-85	969	1707704677128335900	CMakeFiles/CS_201.dir/project/phase1/Phase1Main_S24.cpp.o	225b03f2d273028b
+242	1744	1712894080564334500	CMakeFiles/CS_201.dir/project/phase1/Phase1Main.cpp.o	6a8477edcec776ea
+10	1427	1712894080222679500	CMakeFiles/CS_201.dir/project/phase1/main.cpp.o	10e264d8d81e18fc
+319	1572	1712894080393355700	CMakeFiles/CS_201.dir/main.cpp.o	6b15966540d30aef
+273	1932	1712894080754200300	CMakeFiles/CS_201.dir/project/phase1/Phase1Main_Test.cpp.o	2a0bde710775d0d3
+158	1713	1712894080528338800	CMakeFiles/CS_201.dir/project/phase1/Phase1Main_S24.cpp.o	ec5258e48314e603
+128	1457	1712895104154605800	CMakeFiles/CS_201.dir/project/phase3/Phase3Main.cpp.o	4b7f0cdf6038783e
+1391	2355	1712894081178179600	CMakeFiles/CS_201.dir/project/phase2/CircularDynamicArray.cpp.o	7aed39a61d9b8333
+45	1339	1712894080158132900	CMakeFiles/CS_201.dir/project/phase1/CircularDynamicArray.cpp.o	9752763c0dc66a0b
+102	1373	1712895104068885900	CMakeFiles/CS_201.dir/project/phase3/BHeap.cpp.o	e48e6e882170a508
+113	1464	1712894080285146600	CMakeFiles/CS_201.dir/labs/queueu.cpp.o	3e1c9e3a7a322b8a
+176	327	1712894104207462100	CMakeFiles/CS_201.dir/practice/CircularlyDoublyLinkedList.cpp.o	824cad6b45cccd47
+200	1461	1712895104159112600	CMakeFiles/CS_201.dir/project/phase3/main.cpp.o	a06d27520a54073a
+3	132	1712897837968919400	build.ninja	82f9d4c05d9c3d03
+76	1391	1712894080209679200	CMakeFiles/CS_201.dir/labs/main.cpp.o	1eeeadc315028cc8
+191	1501	1712894080274135300	CMakeFiles/CS_201.dir/project/phase2/two4Tree.cpp.o	58f106981a23e2d0
