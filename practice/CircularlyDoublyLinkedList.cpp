@@ -23,8 +23,16 @@ public:
         minNode = nullptr;
     }
 
+	CircularDoublyLinkedList(T k[], int s) {
+		minNode = nullptr;
+
+		for (int i = 0; i < s; i++) {
+    		insertToLeftOfMin(k[i]);
+		}
+	}
+
     // Method to insert a new node to the left of the minimum node
-    void insertToLeftOfMin(const T& value) {
+    void insertToLeftOfMin(T value) {
         Node<T>* newNode = new Node<T>();
         newNode->data = value;
         if (minNode == nullptr) {
@@ -76,16 +84,19 @@ public:
 };
 
 int main() {
-    CircularDoublyLinkedList<int> list;
+    // CircularDoublyLinkedList<int> list1;
 
     // Insert some elements into the list
-    list.insertToLeftOfMin(4);
-    list.insertToLeftOfMin(2);
-    list.insertToLeftOfMin(6);
-    list.insertToLeftOfMin(1);
+    // list1.insertToLeftOfMin(4);
+    // list1.insertToLeftOfMin(2);
+    // list1.insertToLeftOfMin(6);
+    // list1.insertToLeftOfMin(1);
+
+    char keys[6] = {'a', 'b', 'c', 'd', 'e', 'f'};
+    CircularDoublyLinkedList<char> list2(keys, 6);
 
     // Display the contents of the list starting from the minimum node
-    list.displayFromMin();
+    list2.displayFromMin();
 
     return 0;
 }

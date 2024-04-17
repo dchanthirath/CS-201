@@ -7,5 +7,4 @@ add_executable(phase3
         main.cpp
 #        Phase3Main.cpp
         BHeap.cpp
-        BHeapy.cpp
 )

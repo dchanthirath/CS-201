@@ -22,23 +22,23 @@ struct Node {
 };
 
 template <typename keytype>
-class BHeap {
+class BHeapy {
 public:
     // constructors
-    BHeap();
-    BHeap(keytype k[], int s);
+    BHeapy();
+    BHeapy(keytype k[], int s);
 
     // rule of three
-    ~BHeap();
-    BHeap(const BHeap &old);
-    BHeap& operator=(const BHeap& rhs);
+    ~BHeapy();
+    BHeapy(const BHeapy &old);
+    BHeapy& operator=(const BHeapy& rhs);
 
     // member functions
     keytype peekKey();
     keytype extractMin();
 
     void insert(keytype k);
-    void merge(BHeap<keytype> &H2);
+    void merge(BHeapy<keytype> &H2);
     void printKey();
 
 private:
@@ -51,13 +51,13 @@ private:
 };
 
 template<typename keytype>
-BHeap<keytype>::BHeap()
+BHeapy<keytype>::BHeapy()
 {
     minimumNode = nullptr;
 }
 
 template<typename keytype>
-BHeap<keytype>::BHeap(keytype k[], int s)
+BHeapy<keytype>::BHeapy(keytype k[], int s)
 {
     minimumNode = nullptr;
 
@@ -68,7 +68,23 @@ BHeap<keytype>::BHeap(keytype k[], int s)
 }
 
 template<typename keytype>
-void BHeap<keytype>::insert(keytype k)
+BHeapy<keytype>::~BHeapy()
+{
+    // destructor for the class
+    if (minimumNode == nullptr) return;
+
+    Node<keytype>* currentNode = minimumNode;
+    Node<keytype>* nextNode = nullptr;
+
+    do { // does this block first before checking condition, then normal while loop
+        nextNode = currentNode->right;
+        delete currentNode;
+        currentNode = nextNode;
+    } while (currentNode != minimumNode);
+}
+
+template<typename keytype>
+void BHeapy<keytype>::insert(keytype k)
 {
     Node<keytype>* newNode = new Node<keytype>;
     newNode->key = k;
@@ -76,6 +92,8 @@ void BHeap<keytype>::insert(keytype k)
     if (minimumNode == nullptr) // when heap is empty
     {
         minimumNode = newNode;
+        newNode->left = newNode;
+        newNode->right = newNode;
     }
     else // heap is not empty
     {
@@ -94,7 +112,7 @@ void BHeap<keytype>::insert(keytype k)
 }
 
 template<typename keytype>
-void BHeap<keytype>::printKey()
+void BHeapy<keytype>::printKey()
 {
     if (minimumNode == nullptr) return;
 
@@ -107,14 +125,4 @@ void BHeap<keytype>::printKey()
         currentNode = currentNode->right;
     } while(currentNode != minimumNode);
     std::cout << std::endl;
-}
-
-
-int main()
-{
-    char keys[6] = {'a', 'b', 'c', 'd', 'e', 'f'};
-    BHeap<char> H1(keys, 6);
-    H1.printKey();
-
-    return 0;
 }
