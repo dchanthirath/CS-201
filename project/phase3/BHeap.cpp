@@ -6,9 +6,9 @@
 template <typename keytype>
 struct Node {
     keytype key;
-    int height; // tracks the height of the tree e.g. b0, b1, b2, etc.
+    int degree; // tracks the degree of the tree e.g. b0, b1, b2, etc.
     Node* parent;
-    // Node* child; // the b1, whereas the parent would be b0
+    Node* child; // the b1, whereas the parent would be b0
     Node* left;
     Node* right;
 };
@@ -49,7 +49,7 @@ BHeap<keytype>::BHeap()
     //default constructor
     //the heap should be empty
 
-    Node<keytype> *minimum = nullptr;
+    minimumNode = nullptr;
 
 }
 
@@ -62,7 +62,7 @@ BHeap<keytype>::BHeap(keytype *k, int s)
      * heap should be constructed using repeated insertions
      * will call to consolidate after insertions
      */
-    Node<keytype> *minimum = nullptr;
+    minimumNode = nullptr;
 
     for (int i = 0; i < s; i++)
     {
@@ -128,6 +128,46 @@ keytype BHeap<keytype>::extractMin()
      * and consolidate called starting with the first (smallest rank) child tree
      */
 
+    // the list empty
+    if (minimumNode == nullptr) // the list is empty
+    {
+        std::cout << "heap is empty" << std::endl;
+        return BHeap();
+    }
+
+    // assign mininum key to key value
+    int minimumValue = minimumNode->key;
+
+    // pop the minimum
+    Node<keytype>* leftOfMinimum = minimumNode->left;
+    Node<keytype>* rightOfMinimum = minimumNode->right;
+
+    if (minimumNode->child == nullptr) { // no child case
+        leftOfMinimum->right = minimumNode->right;
+        rightOfMinimum->left = minimumNode->left;
+    } else { // child case
+        minimumNode->child->left = minimumNode->left;
+        minimumNode->child->right = minimumNode->right;
+    }
+
+    // consolidate the heap
+    consolidate();
+
+    delete minimumNode;
+
+    // find new min
+    minimumNode = rightOfMinimum;
+    Node<keytype>* currentNode = rightOfMinimum->right;
+
+    while (currentNode != rightOfMinimum) {
+        if (currentNode->key < minimumNode->key) {
+            minimumNode = currentNode;
+        }
+        currentNode = currentNode->right;
+    }
+
+    // returns the old min
+    return minimumValue;
 }
 
 template<typename keytype>
@@ -141,6 +181,13 @@ void BHeap<keytype>::consolidate() {
      * from smallest tree to largest and the minimum pointer should be updated
      */
 
+    Node<keytype>* rootList[30] = {nullptr};
+
+    // while()
+    // {
+    //
+    // }
+
 }
 
 template<typename keytype>
@@ -153,9 +200,9 @@ void BHeap<keytype>::insert(keytype k)
      */
     Node<keytype>* newNode = new Node<keytype>;
     newNode->key = k;
-    newNode->height = 0;
-    newNode->parent = nullptr;
-    // newNode->child = nullptr;
+    newNode->degree = 0;
+    newNode->parent = newNode;
+    newNode->child = nullptr;
 
     if (minimumNode == nullptr) // empty heap
     {
@@ -207,8 +254,10 @@ void BHeap<keytype>::printKey()
     if (minimumNode == nullptr) return;
 
     Node<keytype>* currentNode = minimumNode;
-    std::cout << "B" << currentNode->height << ":" << std::endl;
+    std::cout << "B" << currentNode->degree << ":" << std::endl;
     do {
         std::cout << currentNode->key << " ";
+        currentNode = currentNode->right;
     } while (currentNode != minimumNode);
+    std::cout << std::endl;
 }
