@@ -83,15 +83,14 @@ BHeap<keytype>::~BHeap()
 
     if (minimumNode == nullptr) return;
 
-    // if (minimumNode != nullptr) {
-    //     deleteHeap(minimumNode);
-    // }
-
     Node<keytype>* currentNode = minimumNode;
     Node<keytype>* nextNode = nullptr;
 
     do { // does this block first before checking condition, then normal while loop
         nextNode = currentNode->right;
+
+        if (currentNode->child != nullptr) deleteHeap(currentNode); // deletes the tree
+
         delete currentNode;
         currentNode = nextNode;
     } while (currentNode != minimumNode);
@@ -100,10 +99,10 @@ BHeap<keytype>::~BHeap()
 template<typename keytype>
 void BHeap<keytype>::deleteHeap(Node<keytype> *node)
 {
+    // helper for deleting children
     // Recursively delete all nodes starting from the given node
-    if (node == nullptr) {
-        return;
-    }
+    if (node == nullptr) return;
+
     deleteHeap(node->child); // Recursively delete the child list
     deleteHeap(node->right); // Recursively delete the sibling list
     delete node; // Delete the current node
@@ -192,49 +191,6 @@ keytype BHeap<keytype>::extractMin()
     return keyValue;
 }
 
-// template<typename keytype>
-// keytype BHeap<keytype>::extractMin()
-// {
-//     /*
-//      * Removes the minimum key from the heap and returns the key.
-//      * Children of the minimum should be inserted into the root list in place of the minimum.
-//      * Consolidate is called starting with the first (smallest rank) child tree.
-//      * Written from the book
-//      */
-//
-//     keytype minKey; // Variable to store the minimum key
-//
-//     // If the heap is not empty
-//     if (minimumNode != nullptr) {
-//         // Store the minimum key
-//         minKey = minimumNode->key;
-//
-//         // Extract children of the minimum and insert them into the root list
-//         Node<keytype>* child = minimumNode->child;
-//         while (child != nullptr) {
-//             Node<keytype>* nextChild = child->right; // Store the next child before modifying the pointers
-//             // insertIntoRootList(child); // Insert the child into the root list
-//             child->parent = nullptr; // Reset the parent pointer of the child
-//             child = nextChild; // Move to the next child
-//         }
-//
-//         // Remove the minimum from the root list
-//         // removeNodeFromRootList(minimumNode);
-//
-//         // Update the minimum pointer
-//         if (minimumNode == minimumNode->right) {
-//             minimumNode = nullptr; // If the minimum was the only node in the root list
-//         } else {
-//             minimumNode = minimumNode->right; // Set minimum to the next node in the root list
-//         }
-//
-//         // Consolidate the heap
-//         // consolidate();
-//     }
-//
-//     return minKey; // Return the minimum key
-// }
-
 template<typename keytype>
 void BHeap<keytype>::consolidate() {
     /*
@@ -263,7 +219,7 @@ void BHeap<keytype>::consolidate() {
                 std::swap(currentNode, otherNode);
             }
             // set other node as child of other node
-            adoption(otherNode, currentNode);
+            link(otherNode, currentNode);
             rootList[degree] = nullptr;
             ++degree;
         }
@@ -338,6 +294,8 @@ void BHeap<keytype>::merge(BHeap<keytype> &H2)
      * after min in H1, with min in H2 being the first root inserted
      */
 
+    if (H2.minimumNode == nullptr) return; // empty heap
+
     Node<keytype>* H2MinLeft = H2.minimumNode->left; // acts like a TEMP holding the original node
 
     H2MinLeft->right = minimumNode; // updates H2's left of min's right pointer to H1's min node
@@ -348,8 +306,6 @@ void BHeap<keytype>::merge(BHeap<keytype> &H2)
 
     // effectively deletes H2 by disconnecting H2's min
     H2.minimumNode = nullptr;
-    H2.minimumNode->left = nullptr;
-    H2.minimumNode->right = nullptr;
 }
 
 template<typename keytype>
@@ -365,13 +321,23 @@ void BHeap<keytype>::printKey()
      * and then use a modified preorder traversal of the tree
      */
 
-    if (minimumNode == nullptr) return;
+    if (minimumNode == nullptr) return; // empty heap
 
     Node<keytype>* currentNode = minimumNode;
-    std::cout << "B" << currentNode->degree << ":" << std::endl; // this will only print the first
+    std::cout << "B" << currentNode->degree << ":" << std::endl; // TODO: delete later
     do {
-        std::cout << currentNode->key << " ";
+        // std::cout << "B" << currentNode->degree << ":" << std::endl; // this will only print the first
+        if (currentNode->child != nullptr)
+        {
+            // TODO: write a modified preorder
+        }
+        else // always a B0
+        {
+            std::cout << currentNode->key << " ";
+        }
+        // std::cout << std::endl;
+
         currentNode = currentNode->right;
     } while (currentNode != minimumNode);
-    std::cout << std::endl;
+    std::cout << std::endl; // TODO: delete later
 }
