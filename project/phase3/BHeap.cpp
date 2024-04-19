@@ -114,7 +114,7 @@ BHeap<keytype>::BHeap(const BHeap &old)
 {
     // copy constructor
     // should create a deep copy of the old heap
-
+    std::cout << "COPY CONSTRUCTOR CALLED" << std::endl; // TODO: delete this later
 
 }
 
@@ -126,6 +126,7 @@ BHeap<keytype>& BHeap<keytype>::operator=(const BHeap &rhs)
      * should create a deep copy of the right hand side heap
      * and return a reference to the left hand side heap
      */
+    std::cout << "ASSIGNMENT OPERATOR CALLED" << std::endl; // TODO: delete this later
 
     return *this;
 }
@@ -135,7 +136,6 @@ keytype BHeap<keytype>::peekKey()
 {
     // returns the minimum key in the heap
     // without modifying the heap
-
     return minimumNode->key;
 }
 
@@ -153,12 +153,12 @@ keytype BHeap<keytype>::extractMin()
     // the list empty
     if (minimumNode == nullptr) // the list is empty
     {
-        std::cout << "heap is empty" << std::endl;
+        std::cout << "heap is empty" << std::endl; // TODO: delete this later
         return keytype();
     }
 
     // assign mininum key to key value
-    int minimumValue = minimumNode->key;
+    int keyValue = minimumNode->key;
 
     // pop the minimum
     Node<keytype>* leftOfMinimum = minimumNode->left;
@@ -189,7 +189,7 @@ keytype BHeap<keytype>::extractMin()
     }
 
     // returns the old min
-    return minimumValue;
+    return keyValue;
 }
 
 // template<typename keytype>
@@ -338,6 +338,26 @@ void BHeap<keytype>::merge(BHeap<keytype> &H2)
      * after min in H1, with min in H2 being the first root inserted
      */
 
+    // Node<keytype>* H1MinLeft = minimumNode->left; // acts like a TEMP holding the original node
+    //
+    // minimumNode->left->right = H2.minimumNode; // updates H1's left of min's right pointer to H2 min
+    // minimumNode->left = H2.minimumNode->left; // updates H1's min's left pointer to H2's min's left pointer
+    //
+    // H2.minimumNode->left->right = minimumNode; // updates H2's left of min's right pointer to H1 min
+    // H2.minimumNode->left = H1MinLeft; // updates H2's min's left pointer to H1's min's left pointer
+
+    Node<keytype>* H2MinLeft = H2.minimumNode->left; // acts like a TEMP holding the original node
+
+    H2MinLeft->right = minimumNode; // updates H2's left of min's right pointer to H1's min node
+    H2.minimumNode->left = minimumNode->left; // updates's H2's min's left node to H1's min left pointer
+
+    minimumNode->left->right = H2.minimumNode; // updates H1's left of min's right pointer to H2 min
+    minimumNode->left = H2MinLeft; // updates H1's min's left pointer to H2's min's left pointer
+
+    // effectively deletes H2 by disconnecting H2's min
+    H2.minimumNode = nullptr;
+    H2.minimumNode->left = nullptr;
+    H2.minimumNode->right = nullptr;
 }
 
 template<typename keytype>
