@@ -338,14 +338,6 @@ void BHeap<keytype>::merge(BHeap<keytype> &H2)
      * after min in H1, with min in H2 being the first root inserted
      */
 
-    // Node<keytype>* H1MinLeft = minimumNode->left; // acts like a TEMP holding the original node
-    //
-    // minimumNode->left->right = H2.minimumNode; // updates H1's left of min's right pointer to H2 min
-    // minimumNode->left = H2.minimumNode->left; // updates H1's min's left pointer to H2's min's left pointer
-    //
-    // H2.minimumNode->left->right = minimumNode; // updates H2's left of min's right pointer to H1 min
-    // H2.minimumNode->left = H1MinLeft; // updates H2's min's left pointer to H1's min's left pointer
-
     Node<keytype>* H2MinLeft = H2.minimumNode->left; // acts like a TEMP holding the original node
 
     H2MinLeft->right = minimumNode; // updates H2's left of min's right pointer to H1's min node
