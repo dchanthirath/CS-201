@@ -120,8 +120,19 @@ BHeap<keytype>::BHeap(const BHeap &old)
 {
     // copy constructor
     // should create a deep copy of the old heap
-    std::cout << "COPY CONSTRUCTOR CALLED" << std::endl; // TODO: delete this later
+    // std::cout << "COPY CONSTRUCTOR CALLED" << std::endl; // TODO: delete this later
+    minimumNode = nullptr;
 
+    Node<keytype>* currentNode = old.minimumNode;
+    Node<keytype>* nextNode = nullptr;
+
+    do {
+        nextNode = currentNode->right;
+
+        insert(currentNode->key);
+
+        currentNode = nextNode;
+    } while (currentNode != old.minimumNode);
 }
 
 template<typename keytype>
@@ -132,7 +143,25 @@ BHeap<keytype>& BHeap<keytype>::operator=(const BHeap &rhs)
      * should create a deep copy of the right hand side heap
      * and return a reference to the left hand side heap
      */
-    std::cout << "ASSIGNMENT OPERATOR CALLED" << std::endl; // TODO: delete this later
+    // std::cout << "ASSIGNMENT OPERATOR CALLED" << std::endl; // TODO: delete this later
+    if (this == &rhs) return *this; // check for self assignment
+
+    // delete the current heap
+    if (minimumNode != nullptr) delete this;
+
+    // create a deep copy of the heap
+    minimumNode = nullptr;
+
+    Node<keytype>* currentNode = rhs.minimumNode;
+    Node<keytype>* nextNode = nullptr;
+
+    do {
+        nextNode = currentNode->right;
+
+        insert(currentNode->key);
+
+        currentNode = nextNode;
+    } while (currentNode != rhs.minimumNode);
 
     return *this;
 }
@@ -157,11 +186,11 @@ keytype BHeap<keytype>::extractMin()
      */
 
     // the list empty
-    // if (minimumNode == nullptr) // the list is empty
-    // {
-    //     std::cout << "heap is empty" << std::endl; // TODO: delete this later
-    //     return keytype();
-    // }
+    if (minimumNode == nullptr) // the list is empty
+    {
+        std::cout << "heap is empty" << std::endl; // TODO: delete this later
+        return keytype();
+    }
 
     // assign mininum key to key value
     int keyValue = minimumNode->key;
@@ -178,12 +207,9 @@ keytype BHeap<keytype>::extractMin()
         minimumNode->child->right = minimumNode->right;
     }
 
-    // consolidate the heap
-    // consolidate();
-
     delete minimumNode;
 
-   // find new min
+    // find new min
     minimumNode = rightOfMinimum;
     Node<keytype>* currentNode = rightOfMinimum->right;
 
@@ -192,6 +218,14 @@ keytype BHeap<keytype>::extractMin()
             minimumNode = currentNode;
         }
         currentNode = currentNode->right;
+    }
+
+    // consolidate the heap
+    consolidate();
+
+    // if the root list becomes empty, update minimumNode to nullptr
+    if (minimumNode == rightOfMinimum) {
+        minimumNode = nullptr;
     }
 
     // returns the old min
@@ -349,7 +383,6 @@ void BHeap<keytype>::printKey()
         std::cout << "B" << currentNode->degree << ":" << std::endl; // this will only print the first
         if (currentNode->child != nullptr) // not b0
         {
-            // TODO: write a modified preorder
             printHeap(currentNode);
         }
         else // always a B0
@@ -371,12 +404,10 @@ void BHeap<keytype>::printHeap(Node<keytype>* node) {
     std::cout << node->key << " ";
 
     // Print the children of the current node
-    if (node->child != nullptr) {
-        Node<keytype>* childNode = node->child;
-        Node<keytype>* startNode = childNode;
-        do {
-            printHeap(childNode);
-            childNode = childNode->right;
-        } while (childNode != startNode);
+    Node<keytype>* childNode = node->child;
+    while (childNode != nullptr) {
+        printHeap(childNode);
+        childNode = childNode->right;
+        if (childNode == node->child) break; // Break the loop if we've reached the end of the children list
     }
 }
