@@ -1,0 +1,4 @@
+# ninja log v5
+4	131	1713581610842212600	build.ninja	c3ab04f67fb51b4b
+2	526	1712901721872449400	CMakeFiles/practice.dir/CircularlyDoublyLinkedList.cpp.o	d103ee0039ce4630
+535	685	1712901722030896800	practice.exe	21b173135a501698

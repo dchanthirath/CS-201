@@ -1,0 +1,3 @@
+/cygdrive/c/Users/Donald/CLionProjects/CS-201/project/phase3/cmake-build-debug/CMakeFiles/phase3.dir
+/cygdrive/c/Users/Donald/CLionProjects/CS-201/project/phase3/cmake-build-debug/CMakeFiles/edit_cache.dir
+/cygdrive/c/Users/Donald/CLionProjects/CS-201/project/phase3/cmake-build-debug/CMakeFiles/rebuild_cache.dir

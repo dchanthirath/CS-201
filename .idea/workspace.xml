@@ -20,50 +20,18 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80ff20b4-dc4b-4162-99b8-309b94c3ef3a" name="Changes" comment="updated insert">
-      <change afterPath="$PROJECT_DIR$/practice/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice/CircularlyDoublyLinkedList.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice/a.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/phase1/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/phase2/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/phase3/BHeapy.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/phase3/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/phase3/a.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/phase3/a.exe.stackdump" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/phase3/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="80ff20b4-dc4b-4162-99b8-309b94c3ef3a" name="Changes" comment="implemented copy assignment and operator">
+      <change afterPath="$PROJECT_DIR$/practice/a.exe.stackdump" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/phase3/Phase3.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/phase3/Phase3.exe.stackdump" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cache-v2-831f7a02683da8e962e4.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-ddbd565ec2bad220ea38.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-c2080928f3a0b99d9972.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2024-04-10T20-13-18-0419.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-CS_201-Debug-1ec91bdcdebace5d47f7.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.27.8/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.27.8/CMakeCXXCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.27.8/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.27.8/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.27.8/CMakeRCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.27.8/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.27.8/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.27.8/CompilerIdC/a.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.27.8/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.27.8/CompilerIdCXX/a.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/edit_cache.dir/utility.sh" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/edit_cache.dir/utility.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rebuild_cache.dir/utility.sh" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rebuild_cache.dir/utility.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/practice/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/a.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/fibonacci_heap.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/practice/fibonacci_heap.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/phase3/BHeap.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase3/BHeap.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/phase3/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase3/a.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/phase3/a.exe.stackdump" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase3/a.exe.stackdump" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/phase3/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project/phase3/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,11 +70,15 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/labs/Queue.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/labs/main.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/labs/queueu.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/main.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/practice/CircularlyDoublyLinkedList.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/practice/BHeapy.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/practice/CircularlyDoublyLinkedList.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/practice/main.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/project/phase1/CircularDynamicArray.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/project/phase1/Phase1Main.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/project/phase1/Phase1Main_Test.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -114,8 +86,9 @@
     <setting file="file://$PROJECT_DIR$/project/phase1/test.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/project/phase2/Phase2Main.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/project/phase3/BHeap.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/project/phase3/Phase3Main.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/phase3/Phase3Main.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/project/phase3/main.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../cygwin64/lib/gcc/x86_64-pc-cygwin/11/include/c++/bits/move.h" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -177,14 +150,19 @@
       <recent name="C:\Users\Donald\CLionProjects\CS-201\labs\lab3" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Donald\CLionProjects\CS-201\practice" />
       <recent name="C:\Users\Donald\CLionProjects\CS-201\project\phase3" />
       <recent name="C:\Users\Donald\CLionProjects\CS-201" />
       <recent name="C:\Users\Donald\CLionProjects\CS-201\project\phase2" />
       <recent name="C:\Users\Donald\CLionProjects\CS-201\project\phase1" />
-      <recent name="C:\Users\Donald\CLionProjects\CS-201\labs" />
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.phase3">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CS_201" type="CMakeListConfigurationType" factoryName="CMakeListConfigurationFactory" temporary="true">
       <method v="2" />
     </configuration>
@@ -285,78 +263,12 @@
       <workItem from="1712882395952" duration="507000" />
       <workItem from="1712883779067" duration="21942000" />
       <workItem from="1712972537184" duration="337000" />
-    </task>
-    <task id="LOCAL-00011" summary="deleted header file in lab3">
-      <option name="closed" value="true" />
-      <created>1707296545559</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1707296545559</updated>
-    </task>
-    <task id="LOCAL-00012" summary="added functionality for the delfront and delend functions">
-      <option name="closed" value="true" />
-      <created>1707315040795</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1707315040795</updated>
-    </task>
-    <task id="LOCAL-00013" summary="unversioned files from clion cmake">
-      <option name="closed" value="true" />
-      <created>1707315065479</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1707315065479</updated>
-    </task>
-    <task id="LOCAL-00014" summary="added more description for QSelect">
-      <option name="closed" value="true" />
-      <created>1707315593358</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1707315593358</updated>
-    </task>
-    <task id="LOCAL-00015" summary="unversioned file from clion">
-      <option name="closed" value="true" />
-      <created>1707315606111</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1707315606111</updated>
-    </task>
-    <task id="LOCAL-00016" summary="fixed addFront and delEnd">
-      <option name="closed" value="true" />
-      <created>1707325203870</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1707325203870</updated>
-    </task>
-    <task id="LOCAL-00017" summary="fixed delFront, delEnd, addEnd">
-      <option name="closed" value="true" />
-      <created>1707339653541</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1707339653541</updated>
-    </task>
-    <task id="LOCAL-00018" summary="fixed addFront">
-      <option name="closed" value="true" />
-      <created>1707340704681</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1707340704681</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Add and delete functions are fully working&#10;made progress on quick select algorithm">
-      <option name="closed" value="true" />
-      <created>1707437533527</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1707437533527</updated>
+      <workItem from="1713312945756" duration="10476000" />
+      <workItem from="1713385446443" duration="26000" />
+      <workItem from="1713385646801" duration="14803000" />
+      <workItem from="1713402060338" duration="5137000" />
+      <workItem from="1713481203285" duration="3272000" />
+      <workItem from="1713489631361" duration="21068000" />
     </task>
     <task id="LOCAL-00020" summary="whatever that clion wanted to add">
       <option name="closed" value="true" />
@@ -678,7 +590,79 @@
       <option name="project" value="LOCAL" />
       <updated>1712882728470</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="switched cmake to be in phase3">
+      <option name="closed" value="true" />
+      <created>1713313828045</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1713313828045</updated>
+    </task>
+    <task id="LOCAL-00061" summary="testing fixes for BHeapy.cpp">
+      <option name="closed" value="true" />
+      <created>1713394349862</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1713394349862</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Implemented insert, peek, and extract (partially)">
+      <option name="closed" value="true" />
+      <created>1713394378717</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1713394378717</updated>
+    </task>
+    <task id="LOCAL-00063" summary="trying to implement consolidate">
+      <option name="closed" value="true" />
+      <created>1713537758740</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1713537758740</updated>
+    </task>
+    <task id="LOCAL-00064" summary="implemented merge&#10;-fixed by updating h2 first">
+      <option name="closed" value="true" />
+      <created>1713544343811</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1713544343811</updated>
+    </task>
+    <task id="LOCAL-00065" summary="removed merge old code">
+      <option name="closed" value="true" />
+      <created>1713544375880</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1713544375880</updated>
+    </task>
+    <task id="LOCAL-00066" summary="implemented merge">
+      <option name="closed" value="true" />
+      <created>1713553236635</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1713553236635</updated>
+    </task>
+    <task id="LOCAL-00067" summary="implemented consolidate">
+      <option name="closed" value="true" />
+      <created>1713587212350</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1713587212350</updated>
+    </task>
+    <task id="LOCAL-00068" summary="implemented copy assignment and operator">
+      <option name="closed" value="true" />
+      <created>1713587971473</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1713587971473</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -691,15 +675,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="removed auto keyword because it won't compile on server" />
-    <MESSAGE value="updated makefile to compile with c++11 and with -wall flag to catch more errors" />
-    <MESSAGE value="clion workspace updated" />
-    <MESSAGE value="zipped CircularDynamicArray.cpp and makefile" />
-    <MESSAGE value="added debug lines" />
-    <MESSAGE value="Updated merge sort to set front to 0" />
-    <MESSAGE value="created helper functions sizeUp and sizeDown to reduce code length" />
-    <MESSAGE value="added the definitions for methods for class" />
-    <MESSAGE value="thing" />
     <MESSAGE value="main from class for Phase2Main.cpp" />
     <MESSAGE value="clion files" />
     <MESSAGE value="clions stuff" />
@@ -716,7 +691,16 @@
     <MESSAGE value="clion updates" />
     <MESSAGE value="clion debug files" />
     <MESSAGE value="updated insert" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated insert" />
+    <MESSAGE value="switched cmake to be in phase3" />
+    <MESSAGE value="testing fixes for BHeapy.cpp" />
+    <MESSAGE value="Implemented insert, peek, and extract (partially)" />
+    <MESSAGE value="trying to implement consolidate" />
+    <MESSAGE value="implemented merge&#10;-fixed by updating h2 first" />
+    <MESSAGE value="removed merge old code" />
+    <MESSAGE value="implemented merge" />
+    <MESSAGE value="implemented consolidate" />
+    <MESSAGE value="implemented copy assignment and operator" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented copy assignment and operator" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -729,17 +713,6 @@
         <breakpoint type="CMakeExceptionBreakpoint" />
       </default-breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <inline-watch fileUrl="file://$PROJECT_DIR$/project/phase3/BHeap.cpp" line="153">
-        <watch expression="newNode" language="C++" />
-      </inline-watch>
-      <inline-watch fileUrl="file://$PROJECT_DIR$/project/phase3/BHeap.cpp" line="168">
-        <watch expression="newNode" language="C++" />
-      </inline-watch>
-      <inline-watch fileUrl="file://$PROJECT_DIR$/project/phase3/BHeap.cpp" line="146">
-        <watch expression="k" language="C++" />
-      </inline-watch>
-    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

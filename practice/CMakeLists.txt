@@ -7,4 +7,5 @@ add_executable(practice
         CircularlyDoublyLinkedList.cpp
         BHeapy.cpp
         main.cpp
+        fibonacci_heap.cpp
 )

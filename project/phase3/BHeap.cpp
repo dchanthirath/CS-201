@@ -120,7 +120,7 @@ BHeap<keytype>::BHeap(const BHeap &old)
 {
     // copy constructor
     // should create a deep copy of the old heap
-    // std::cout << "COPY CONSTRUCTOR CALLED" << std::endl; // TODO: delete this later
+    // std::cout << "COPY CONSTRUCTOR CALLED" << std::endl; // delete this later
     minimumNode = nullptr;
 
     Node<keytype>* currentNode = old.minimumNode;
@@ -143,7 +143,7 @@ BHeap<keytype>& BHeap<keytype>::operator=(const BHeap &rhs)
      * should create a deep copy of the right hand side heap
      * and return a reference to the left hand side heap
      */
-    // std::cout << "ASSIGNMENT OPERATOR CALLED" << std::endl; // TODO: delete this later
+    // std::cout << "ASSIGNMENT OPERATOR CALLED" << std::endl; // delete this later
     if (this == &rhs) return *this; // check for self assignment
 
     // delete the current heap
@@ -188,7 +188,7 @@ keytype BHeap<keytype>::extractMin()
     // the list empty
     if (minimumNode == nullptr) // the list is empty
     {
-        std::cout << "heap is empty" << std::endl; // TODO: delete this later
+        // std::cout << "heap is empty" << std::endl; // delete this later
         return keytype();
     }
 
@@ -242,6 +242,7 @@ void BHeap<keytype>::consolidate() {
      * when the process is finished, the list should be created
      * from smallest tree to largest and the minimum pointer should be updated
      */
+    if (minimumNode == nullptr) return; // empty
 
     // initialization
     Node<keytype>* rootList[MAX_DEGREE] = {nullptr};
@@ -269,6 +270,14 @@ void BHeap<keytype>::consolidate() {
         rootList[degree] = currentNode;
         currentNode = nextNode; // gets next node
     } while(currentNode != endNode);
+
+    // Update the minimumNode after the consolidation
+    minimumNode = nullptr;
+    for (int i = 0; i < MAX_DEGREE; ++i) {
+        if (rootList[i] != nullptr && (minimumNode == nullptr || rootList[i]->key < minimumNode->key)) {
+            minimumNode = rootList[i];
+        }
+    }
 }
 
 template<typename keytype>
