@@ -41,8 +41,7 @@ private:
     void deleteHeap(Node<keytype>* node);
     void consolidate();
     void link(Node<keytype>* childNode, Node<keytype>* parentNode);
-
-    void removeNode(Node<keytype> *node);
+    void printHeap(Node<keytype>* node);
 };
 
 template<typename keytype>
@@ -72,7 +71,7 @@ BHeap<keytype>::BHeap(keytype *k, int s)
     {
         insert(k[i]);
     }
-    // consolidate();
+    consolidate();
 }
 
 template<typename keytype>
@@ -103,8 +102,16 @@ void BHeap<keytype>::deleteHeap(Node<keytype> *node)
     // Recursively delete all nodes starting from the given node
     if (node == nullptr) return;
 
-    deleteHeap(node->child); // Recursively delete the child list
-    deleteHeap(node->right); // Recursively delete the sibling list
+    Node<keytype>* childNode = node->child;
+    if (childNode != nullptr) {
+        Node<keytype>* start = childNode;
+        do {
+            Node<keytype>* nextChild = childNode->right;
+            deleteHeap(childNode); // Recursively delete the child tree
+            childNode = nextChild;
+        } while (childNode != start);
+    }
+
     delete node; // Delete the current node
 }
 
@@ -150,11 +157,11 @@ keytype BHeap<keytype>::extractMin()
      */
 
     // the list empty
-    if (minimumNode == nullptr) // the list is empty
-    {
-        std::cout << "heap is empty" << std::endl; // TODO: delete this later
-        return keytype();
-    }
+    // if (minimumNode == nullptr) // the list is empty
+    // {
+    //     std::cout << "heap is empty" << std::endl; // TODO: delete this later
+    //     return keytype();
+    // }
 
     // assign mininum key to key value
     int keyValue = minimumNode->key;
@@ -202,18 +209,19 @@ void BHeap<keytype>::consolidate() {
      * from smallest tree to largest and the minimum pointer should be updated
      */
 
+    // initialization
     Node<keytype>* rootList[MAX_DEGREE] = {nullptr};
-
     Node<keytype>* currentNode = minimumNode;
     Node<keytype>* endNode = minimumNode;
+    Node<keytype>* nextNode = nullptr;
 
     do { // traversing rootlist and consolidating heaps with same degree
-        Node<keytype>* nextNode = currentNode->right;
+        nextNode = currentNode->right;
         int degree = currentNode->degree;
 
-        while (rootList[degree] != nullptr)
+        while (rootList[degree] != nullptr) // combining trees of equal degree
         { // merging trees with same degree
-            Node<keytype>* otherNode = rootList[degree];
+            Node<keytype>* otherNode = rootList[degree]; // this is the node to the right or more
             if (otherNode->key < currentNode->key) // swap the two nodes when other is greater than current
             {
                 std::swap(currentNode, otherNode);
@@ -221,7 +229,7 @@ void BHeap<keytype>::consolidate() {
             // set other node as child of other node
             link(otherNode, currentNode);
             rootList[degree] = nullptr;
-            ++degree;
+            ++degree; // update degree array
         }
 
         rootList[degree] = currentNode;
@@ -237,14 +245,27 @@ void BHeap<keytype>::link(Node<keytype> *childNode, Node<keytype> *parentNode)
     * Update degree of parent and make child a child of parent
     */
 
-    childNode->parent = parentNode;
-    childNode->right = parentNode->child;
-    if (parentNode->child != nullptr)
-    {
-        parentNode->child->left = childNode;
-    }
-    parentNode->child = childNode;
+    // removing child from root list
+    childNode->left->right = childNode->right;
+    childNode->right->left = childNode->left;
 
+    // make child node a child of parent node
+    if (parentNode->child == nullptr) // this is a b0 to a b1
+    {
+        parentNode->child = childNode;
+        childNode->left = childNode;
+        childNode->right = childNode;
+    }
+    else
+    {
+        childNode->left = parentNode->child;
+        childNode->right = parentNode->child->right;
+        parentNode->child->right = childNode;
+        childNode->right->left = childNode;
+    }
+    childNode->parent = parentNode;
+
+    // increment degree of parent
     parentNode->degree++;
 }
 
@@ -324,20 +345,38 @@ void BHeap<keytype>::printKey()
     if (minimumNode == nullptr) return; // empty heap
 
     Node<keytype>* currentNode = minimumNode;
-    std::cout << "B" << currentNode->degree << ":" << std::endl; // TODO: delete later
     do {
-        // std::cout << "B" << currentNode->degree << ":" << std::endl; // this will only print the first
-        if (currentNode->child != nullptr)
+        std::cout << "B" << currentNode->degree << ":" << std::endl; // this will only print the first
+        if (currentNode->child != nullptr) // not b0
         {
             // TODO: write a modified preorder
+            printHeap(currentNode);
         }
         else // always a B0
         {
-            std::cout << currentNode->key << " ";
+            std::cout << currentNode->key;
         }
-        // std::cout << std::endl;
+        std::cout << std::endl;
 
         currentNode = currentNode->right;
     } while (currentNode != minimumNode);
-    std::cout << std::endl; // TODO: delete later
+}
+
+template<typename keytype>
+void BHeap<keytype>::printHeap(Node<keytype>* node) {
+    // Base case: If the node is null, return
+    if (node == nullptr) return;
+
+    // Print the key of the current node
+    std::cout << node->key << " ";
+
+    // Print the children of the current node
+    if (node->child != nullptr) {
+        Node<keytype>* childNode = node->child;
+        Node<keytype>* startNode = childNode;
+        do {
+            printHeap(childNode);
+            childNode = childNode->right;
+        } while (childNode != startNode);
+    }
 }
